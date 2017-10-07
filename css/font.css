@@ -5,6 +5,7 @@
 
 .carousel-font
 {
-	font-family: 'Roboto', sans-serif;
-	font-size: 180%;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 200%;
+	text-transform: none;
 }
