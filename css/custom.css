@@ -10,7 +10,7 @@
 	text-align: center;
 }
 
-.item-price {
+.item-news {
     color: #ff9601;
     font-size: 18px;
     font-weight: bold;
@@ -28,9 +28,9 @@
     visibility: visible;
 }
 
-/* ------------- Pricing Plan ------------- */
+/* ------------- news Plan ------------- */
 
-#pricing .pricing-box {
+#news .news-box {
     background-color: #FFFFFF !important;
     margin: 0 0 30px 0;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
@@ -44,14 +44,14 @@
     -o-border-radius: 3px;
     -ms-border-radius: 3px;
 }
-#pricing .section-inner {
+#news .section-inner {
     padding-bottom: 71px;
     padding-top: 74px;
 }
-.price-image {
+.news-image {
     padding: 11px 0 11px 11px;
 }
-.price-image img {
+.news-image img {
     max-width: none;
     border-radius: 3px;
     border-top-right-radius: 0px;
@@ -59,41 +59,41 @@
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
 }
-.price-content {
+.news-content {
     padding: 20px 20px 12px 20px;
 }
-.price-content h3 {
+.news-content h3 {
     margin-top: 0px;
     font-weight: 600;
     font-size: 26px;
 }
-.price-content ol {
+.news-content ol {
     padding: 0px 20px;
     color: #757b7f;
     line-height: 30px;
 }
-.pricing .price {
+.news .news {
     border-top: 1px dashed #CCCCCC;
     padding: 21px 0 5px;
 }
-.pricing .price h2 {
+.news .news h2 {
     margin: 0 auto;
     display: inline-block;
 }
-.pricing .price a {
+.news .news a {
     display: block;
 }
-.pricing .food-btn {
+.news .food-btn {
     font-size: 16px;
     display: block;
     float: right !important;
     padding: 9px 27px;
 }
-#pricing .pricing-box .price-image figure,
+#news .news-box .news-image figure,
 .events .event-box figure {
     overflow: hidden;
 }
-#pricing .pricing-box .price-image img,
+#news .news-box .news-image img,
 .events .event-box figure img {
     -moz-transition: all 0.3s ease-out 0s;
     -webkit-transition: all 0.3s ease-out 0s;
@@ -102,7 +102,7 @@
     -ms-transition: all 0.3s ease-out 0s;
     transition: all 0.3s ease-out 0s;
 }
-#pricing .pricing-box:hover .price-image img,
+#news .news-box:hover .news-image img,
 .events .event-box:hover figure img {
     -webkit-transform: rotate(-5deg) scale(1.3);
     -moz-transform: rotate(-5deg) scale(1.3);
