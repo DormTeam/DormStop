@@ -1,0 +1,36 @@
+.readmore-btn
+{
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 16px;
+	padding-right: 16px;
+
+	border-bottom-width: 1px;
+	border-top-width: 1px;
+	border-left-width: 1px;
+	border-right-width: 1px;
+
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+
+	border-top-color: gold;
+	border-bottom-color: gold;
+	border-left-color: gold;
+	border-right-color: gold;
+
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-style: solid;
+
+	background-color: gold;
+	color: white;
+
+}
+
+.readmore-btn:hover
+{
+	text-decoration: none;
+}

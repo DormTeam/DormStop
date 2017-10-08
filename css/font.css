@@ -9,3 +9,9 @@
 	font-size: 200%;
 	text-transform: none;
 }
+
+.news-title-font
+{
+	text-transform: uppercase;
+	font-family: 'Mukta', sans-serif;
+}
