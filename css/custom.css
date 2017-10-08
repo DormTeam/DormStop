@@ -43,6 +43,8 @@
     -moz-border-radius: 3px;
     -o-border-radius: 3px;
     -ms-border-radius: 3px;
+    width: 540px;
+    height: 390px;
 }
 #news .section-inner {
     padding-bottom: 71px;
