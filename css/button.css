@@ -1,31 +1,13 @@
 .readmore-btn
 {
-	padding-bottom: 10px;
-	padding-top: 10px;
-	padding-left: 16px;
-	padding-right: 16px;
+	padding: 5px 16px;
+	border-radius: 4px;
 
-	border-bottom-width: 1px;
-	border-top-width: 1px;
-	border-left-width: 1px;
-	border-right-width: 1px;
+	border-color: #ffe033;
 
-	border-top-right-radius: 5px;
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
+	border-style: solid;
 
-	border-top-color: gold;
-	border-bottom-color: gold;
-	border-left-color: gold;
-	border-right-color: gold;
-
-	border-top-style: solid;
-	border-bottom-style: solid;
-	border-left-style: solid;
-	border-right-style: solid;
-
-	background-color: gold;
+	background-color: #ffe033;
 	color: white;
 
 }
@@ -33,4 +15,6 @@
 .readmore-btn:hover
 {
 	text-decoration: none;
+	color: white;
+	background-color: gold;
 }
