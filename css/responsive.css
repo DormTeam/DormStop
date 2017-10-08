@@ -96,17 +96,17 @@
 	.book-now1 h2{
 		margin:0px;
 	}
-	/* Pricing Plan */
-	.pricing .food-btn{
+	/* news-id Plan */
+	.news-id .food-btn{
 		padding:9px 15px;
 	}
-	.price-content ol{
+	.news-content ol{
 		padding:0px 20px;
 	}
-	.pricing .price{
+	.news-id .news{
 		padding:9px 0 5px;
 	}
-	.price-image img {
+	.news-image img {
    	 	border-radius: 3px;
     	max-width: 100%;
 	}
@@ -171,22 +171,22 @@
 	.gallery-items{
 		width:50%;
 	}
-	/* Pricing Plan */
-	.pricing .food-btn{
+	/* news-id Plan */
+	.news-id .food-btn{
 		padding:9px 27px;
 	}
-	.price-image img {
+	.news-image img {
    	 	border-radius: 3px;
     	height: auto;
     	max-width: 100%;
 	}
-	.price-content ol{
+	.news-content ol{
 		padding:0px 20px;
 	}
-	.pricing .price{
+	.news-id .news{
 		padding:21px 0 15px;
 	}
-	.price-image{
+	.news-image{
 		padding:11px;
 	}
 	/* Contact Map */
@@ -329,11 +329,11 @@
 		height:20%;
 	}
 	/* Special Package */
-	.package-price .food-btn{
+	.package-news .food-btn{
 		float:none;
 		margin:10px 0px;
 	}
-	.package-price{
+	.package-news{
 		margin-top:0px;
 	}
 	/* Food Gallery */
