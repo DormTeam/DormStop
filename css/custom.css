@@ -9,3 +9,9 @@
 .title-items{
 	text-align: center;
 }
+
+.item-price {
+    color: #ff9601;
+    font-size: 18px;
+    font-weight: bold;
+}
