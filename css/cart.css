@@ -1,0 +1,26 @@
+.cart
+{
+	display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+      align-items: flex-start;
+}
+.cart img 
+{
+	margin-right: 25px;
+}
+.cart-body
+{
+	-ms-flex: 1;
+      flex: 1;
+}
+.cart-body div
+{
+	margin-left: 25px;
+	margin-right: 25px;
+}
+
+.cart-body a
+{
+	text-decoration: none;
+}
