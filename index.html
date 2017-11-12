@@ -74,7 +74,7 @@
             <li class="nav-item dropdown">
             	<a class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown" href="#">Khách hàng</a>
             	<ul class="dropdown-menu dropdown-content">
-            		<li><a href="#">Đăng nhập</a></li>
+            		<li><a class="portfolio-link" data-toggle="modal" href="#modalLogin">Đăng nhập</a></li>
             		<li><a href="#">Đăng kí</a></li>
             		<li><a href="cart.html">Giỏ hàng</a></li>
             	</ul>
@@ -432,62 +432,6 @@
     </section>
     <!-- news Section Ends -->
     
-
-
-    <!-- Team -->
-    
-    <!--
-    <section class="bg-light" id="team">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading">Tin Tức Nổi Bật</h2>
-            <h3 class="section-subheading text-muted">Các công thức nấu ăn đã thất truyền hàng thế kỷ</h3>
-            <hr>
-          </div>
-        </div>
-
-        <div class="row">
-        <div class="col-md-4 col-sm-12">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModalN-1">
-              <img class="img-responsive img-fluid" src="img/portfolio/banhflan.jpg" alt="">
-            </a>
-            <div>
-              <p class="news-title-font">Cách làm bánh Flan</p>
-              <p class="text-muted">08/10/2017</p>
-              <p class="text-muted" style="text-align: justify;">Bánh flan có công thức làm đơn giản nhưng cách làm không dễ như một số loại bánh khác. Phải làm sao để bánh mềm, không bị nứt, không lỗ chỗ. Bánh có độ béo, thơm và ngọt vừa phải. Cần có sự khéo léo nhất định cộng với một số bí quyết...</p>
-              <a class="portfolio-link readmore-btn" data-toggle="modal" href="#portfolioModalN-1">Đọc tiếp</a>
-              <hr>
-            </div>
-        </div>
-        
-        <div class="col-md-4 col-sm-12">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModalN-2">
-              <img class="img-responsive img-fluid" src="img/portfolio/banhflan.jpg" alt="">
-            </a>
-            <div>
-              <p class="news-title-font">Cách làm khô bò</p>
-              <p class="text-muted">08/10/2017</p>
-              <p class="text-muted" style="text-align: justify;">Cái dmm khô bò...</p>
-              <a class="portfolio-link readmore-btn" data-toggle="modal" href="#portfolioModalN-2">Đọc tiếp</a>
-              <hr>
-            </div>
-        </div>
-
-        <div class="col-md-4 col-sm-12">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModalN-3">
-              <img class="img-responsive img-fluid" src="img/portfolio/banhflan.jpg" alt="">
-            </a>
-            <div>
-              <p class="news-title-font">Cách làm sữa chua</p>
-              <p class="text-muted">08/10/2017</p>
-              <p class="text-muted" style="text-align: justify;">Cái dmm sữa chua...</p>
-              <a class="portfolio-link readmore-btn" data-toggle="modal" href="#portfolioModalN-3">Đọc tiếp</a>
-              <hr>
-            </div>
-        </div>
-      </div>
-      </div> -->
 
     <!-- Contact -->
     <section id="contact">
@@ -1015,6 +959,44 @@
           <div class="modal-footer">
               <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
           </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Modal Login -->
+    <div id="modalLogin" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" style="width: 500px; height: 500px">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <p></p>
+          </div>
+          <div class="modal-body">
+            <h3 class="title-items">Đăng nhập</h3>
+            <p></p>
+
+            <form>
+              <div class="container">
+                <label><b>Tên tài khoản</b></label>
+                <input type="text" placeholder="Nhập tên tài khoản" name="uname" required>
+
+                <label><b>Mật khẩu</b></label>
+                <input type="password" placeholder="Nhập mật khẩu" name="psw" required>
+
+                <button type="submit">Đăng nhập</button>
+                <input type="checkbox" checked="checked"> Nhớ mật khẩu
+              </div>
+
+              <div class="container">
+                <button type="button" class="cancelbtn">Cancel</button>
+                <span class="psw"> <a href="#">Quên mật khẩu?</a></span>
+              </div>
+            </form>             
+          </div>
+          <p></p>
+          <p></p>
+          <p></p>
         </div>
       </div>
     </div>
