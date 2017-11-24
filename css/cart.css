@@ -1,11 +1,17 @@
 .cart
 {
-	display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: start;
-      align-items: flex-start;
+	padding: 10px;
+	margin: 10px;
 }
-.cart img 
+
+.cart-item
+{
+	display: -ms-flexbox;
+  	display: flex;
+  	-ms-flex-align: start;
+    align-items: flex-start;
+}
+.cart-item img 
 {
 	margin-right: 25px;
 }
@@ -23,4 +29,16 @@
 .cart-body a
 {
 	text-decoration: none;
+}
+
+/* design for extract fee*/
+.cart-sub td
+{
+	background-color: #fff176;
+}
+
+/* design for total row*/
+.cart-total td
+{
+	background-color: #ffeb3b;
 }
