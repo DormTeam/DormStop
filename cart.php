@@ -78,7 +78,8 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
 
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
     <!-- Custom styles for this template -->
     <link href="css/agency.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/font.css">
@@ -97,41 +98,10 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: black;" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="index.html">DormStop</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fa fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse menu-font" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="index.html">Giới thiệu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="index.html">Sản phẩm</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="index.html">Khuyến mãi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="index.html">Tin tức</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="index.html">Liên hệ</a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown" href="#">Khách hàng</a>
-                        <ul class="dropdown-menu dropdown-content">
-                            <li><a href="#">Đăng nhập</a></li>
-                            <li><a href="#">Đăng kí</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
         </div>
     </nav>
 
-    <div style="margin-top: 120px">
+    <div class="container">
 
 	<?php  
         $query = "SELECT * FROM product ORDER BY id ASC";  
@@ -140,10 +110,10 @@
          while($row = mysqli_fetch_array($result))  
          {  
     ?>  
-    <div class="col-md-3">  
+    <div class="col-md-4">  
          <form method="post" action="cart.php?action=add&id=<?php echo $row["id"]; ?>">  
               <div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">  
-                   <img src="<?php echo $row["imgurl"]; ?>" class="img-responsive" style = "width: 180px; height: 205px" /><br />  
+                   <img src="<?php echo $row["imgurl"]; ?>" class="img-responsive" style = "width: 120px; height: 150px" /><br />  
                    <h4 class="text-info"><?php echo $row["name"]; ?></h4>  
                    <h4 class="text-danger">$ <?php echo $row["price"]; ?></h4>  
                    <input type="text" name="quantity" class="form-control" value="1" />  
