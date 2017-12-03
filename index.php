@@ -36,10 +36,7 @@
     <link rel="stylesheet" href="css/button.css">
 
     <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
-
-    
-    
+    <link href="css/responsive.css" rel="stylesheet">    
 
   </head>
 
