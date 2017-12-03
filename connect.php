@@ -1,3 +1,3 @@
 <?php
-	$con = mysqli_connect('localhost', 'root', '', 'dormstop');
+	$connect = mysqli_connect('localhost', 'root', '', 'dormstop');
 ?>
