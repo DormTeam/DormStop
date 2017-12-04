@@ -77,7 +77,11 @@
                   echo 'Khách hàng';
               ?></a>
             	<ul class="dropdown-menu dropdown-content">
-            		<li><a class="portfolio-link" data-toggle="modal" href="#modalLogin">Đăng nhập</a></li>
+                <?php if(isset($_COOKIE['username'])): ?> 
+                    <li><a onclick="myFunction();">Đăng xuất</a></li>
+                <?php else: ?>
+                    <li><a class="portfolio-link" data-toggle="modal" href="#modalLogin">Đăng nhập</a></li>
+                <?php endif; ?>
             		<li><a class="portfolio-link" data-toggle="modal" href="#modalRegister">Tạo tài khoản</a></li>
             		<li><a href="cart.php" target="_blank">Giỏ hàng</a></li>
             	</ul>
@@ -1044,3 +1048,16 @@
   </body>
 
 </html>
+
+<script type="text/javascript">
+
+var delete_cookie = function(name) {
+    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+};
+
+function myFunction() {
+    delete_cookie('username');
+    window.location='index.php';
+}
+
+</script>
