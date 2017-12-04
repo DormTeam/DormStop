@@ -69,7 +69,13 @@
             </li>
 
             <li class="nav-item dropdown">
-            	<a class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown" href="#">Khách hàng</a>
+            	<a class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown" href="#">
+              <?php
+                if(isset($_COOKIE['username']))
+                  echo $_COOKIE['username'];
+                else
+                  echo 'Khách hàng';
+              ?></a>
             	<ul class="dropdown-menu dropdown-content">
             		<li><a class="portfolio-link" data-toggle="modal" href="#modalLogin">Đăng nhập</a></li>
             		<li><a class="portfolio-link" data-toggle="modal" href="#modalRegister">Tạo tài khoản</a></li>
@@ -944,15 +950,15 @@
             <h3 class="title-items">Đăng nhập</h3>
             <p></p>
 
-            <form>
+            <form method="POST" action=login.php?do=login>
               <div class="container">
                 <label><b>Tên tài khoản</b></label>
-                <input type="text" placeholder="Nhập tên tài khoản" name="uname" required>
+                <input type="text" placeholder="Nhập tên tài khoản" name="username" required>
 
                 <label><b>Mật khẩu</b></label>
-                <input type="password" placeholder="Nhập mật khẩu" name="psw" required>
+                <input type="password" placeholder="Nhập mật khẩu" name="password" required>
 
-                <button type="submit">Đăng nhập</button>
+                <button type="submit" name="login">Đăng nhập</button>
                 <input type="checkbox" checked="checked"> Nhớ mật khẩu
               </div>
 
