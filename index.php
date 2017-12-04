@@ -78,7 +78,7 @@
               ?></a>
             	<ul class="dropdown-menu dropdown-content">
                 <?php if(isset($_COOKIE['username'])): ?> 
-                    <li><a onclick="myFunction();">Đăng xuất</a></li>
+                    <li><a id="log_out">Đăng xuất</a></li>
                 <?php else: ?>
                     <li><a class="portfolio-link" data-toggle="modal" href="#modalLogin">Đăng nhập</a></li>
                 <?php endif; ?>
@@ -1042,22 +1042,10 @@
     <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
     <script src="js/creative.min.js"></script>
     <script src="js/dropdown-btn.js"></script>
-
+    
+    <script type="text/javascript" src="js/login.js"></script>
     <script type="text/javascript" src="js/custom.js"></script>
 
   </body>
 
 </html>
-
-<script type="text/javascript">
-
-var delete_cookie = function(name) {
-    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-};
-
-function myFunction() {
-    delete_cookie('username');
-    window.location='index.php';
-}
-
-</script>
