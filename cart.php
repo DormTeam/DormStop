@@ -65,7 +65,7 @@
          <form method="post" action="viewcart.php?action=add&id=<?php echo $row["id"]; ?>">  
               <div style="background-color:#f1f1f1; border-radius:15px; padding:10px;" align="center">  
                    <img src="<?php echo $row["imgurl"]; ?>" class="img-responsive"/><br />  
-                   <h4 class="text-info"><?php echo utf8_encode($row["name"]); ?></h4>  
+                   <h4 class="text-info"><?php echo $row["name"]; ?></h4>  
                    <h4 class="text-danger"><?php echo $row["price"]; ?>Đ</h4>  
                    <input type="text" name="quantity" class="form-control" value="1" />  
                    <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />  
