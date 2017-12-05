@@ -19,7 +19,7 @@
            }  
            else  
            {  
-                echo '<script>alert("Item Already Added")</script>';  
+                echo '<script>alert("Sản phẩm đã có trong giỏ hàng! Vui lòng kiểm tra lại.")</script>';  
                 echo '<script>window.location="viewcart.php"</script>';  
            }  
       }  
@@ -43,7 +43,7 @@
                 if($values["item_id"] == $_GET["id"])  
                 {  
                      unset($_SESSION["shopping_cart"][$keys]);  
-                     echo '<script>alert("Item Removed")</script>';  
+                     //echo '<script>alert("Item Removed")</script>';  
                      echo '<script>window.location="viewcart.php"</script>';  
                 }  
            }  
