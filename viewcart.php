@@ -18,9 +18,9 @@
                 $_SESSION["shopping_cart"][$count] = $item_array;  
            }  
            else  
-           {  
-                echo '<script>alert("Sản phẩm đã có trong giỏ hàng! Vui lòng kiểm tra lại.")</script>';  
-                echo '<script>window.location="viewcart.php"</script>';  
+           {
+              echo '<script>alert("Sản phẩm đã có trong giỏ hàng! Vui lòng kiểm tra lại.")</script>';  
+              echo '<script>window.location="viewcart.php"</script>';  
            }  
       }  
       else  
