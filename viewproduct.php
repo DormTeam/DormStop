@@ -41,7 +41,6 @@
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/cart.css">
 </head>
 
 <body id="page-top">

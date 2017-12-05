@@ -1,5 +1,5 @@
 <?php
-	require_once('connect.php');
+	require('connect.php');
 	if (isset($_POST["register"])) {
 		//lấy thông tin từ các form bằng phương thức POST
 		$username = $_POST["rusername"];

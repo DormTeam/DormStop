@@ -77,6 +77,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
@@ -89,7 +91,6 @@
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/cart.css">
 </head>
 
 <body id="page-top">
@@ -104,15 +105,15 @@
     <div class="container">
     <div style="clear:both"></div>  
     <br />  
-    <h3>Thông tin đặt hàng</h3>  
+    <h3 align="center">Thông tin đặt hàng</h3>  
     <div class="table-responsive">  
-         <table class="table table-bordered">  
+         <table class="table table-hover">  
               <tr>  
-                   <th width="40%">Tên sản phẩm</th>  
-                   <th width="10%">Số lượng</th>  
-                   <th width="20%">Giá</th>  
-                   <th width="15%">Tổng tiền</th>  
-                   <th width="5%">Chỉnh sửa</th>  
+                   <th class="text-center" width="25%" style="font-size: 14pt;">Tên sản phẩm</th>  
+                   <th class="text-center" width="15%" style="font-size: 14pt;">Số lượng</th>  
+                   <th class="text-center" width="20%" style="font-size: 14pt;">Giá</th>  
+                   <th class="text-center" width="15%" style="font-size: 14pt;">Tổng tiền</th>  
+                   <th class="text-center" width="15%" style="font-size: 14pt;">Chỉnh sửa</th>  
               </tr>  
               <?php   
               if(!empty($_SESSION["shopping_cart"]))  
@@ -122,26 +123,29 @@
                    {  
               ?>  
               <tr>  
-                   <td><?php echo $values["item_name"]; ?></td>  
-                   <td><?php echo $values["item_quantity"]; ?></td>  
-                   <td><?php echo $values["item_price"]; ?>Đ</td>  
-                   <td><?php echo number_format($values["item_quantity"] * $values["item_price"]); ?>Đ</td>  
-                   <td><a href="viewcart.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a></td>  
+                   <td style="font-size: 13pt;" align="center"><?php echo $values["item_name"]; ?></td>  
+                   <td style="font-size: 13pt;" align="center"><?php echo $values["item_quantity"]; ?></td>  
+                   <td style="font-size: 13pt;" align="center"><?php echo $values["item_price"]; ?>Đ</td>  
+                   <td style="font-size: 13pt;" align="center"><?php echo number_format($values["item_quantity"] * $values["item_price"]); ?>Đ</td>  
+                   <td style="font-size: 13pt;" align="center"><a class="btn btn-danger" href="viewcart.php?action=delete&id=<?php echo $values["item_id"]; ?>">Remove</span></a></td>  
               </tr>  
               <?php  
                         $total = $total + ($values["item_quantity"] * $values["item_price"]);  
                    }  
               ?>  
               <tr>  
-                   <td colspan="3" align="right">Total</td>  
-                   <td align="right"><?php echo number_format($total); ?>Đ</td>  
-                   <td></td>  
+                   <td colspan="3" align="right" style="font-weight: bold; font-size: 20pt;">Tổng cộng</td>  
+                   <td style="font-weight: bold; font-size: 20pt;" align="center"><?php echo number_format($total); ?>Đ</td>  
+                   <td align="center">
+                      <button type="button" class="btn btn-success">Thanh toán ngay <span class="glyphicon glyphicon-play"></span></button> 
+                  </td>  
               </tr>
               <?php  
               }  
               ?>  
-         </table>  
-         <a href="cart.php" class="btn btn-primary" style="float: right;">Tiếp tục mua hàng</a> 
+         </table>
+          
+         <a href="viewproduct.php" class="btn btn-primary" style="float: right;">Tiếp tục mua hàng</a> 
         </div>    
     </div>
 
