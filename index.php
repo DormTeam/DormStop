@@ -78,7 +78,7 @@
               ?></a>
             	<ul class="dropdown-menu dropdown-content">
                 <?php if(isset($_COOKIE['username'])): ?> 
-                    <li><a id="log_out">Đăng xuất</a></li>
+                    <li><a href="#" id="log_out">Đăng xuất</a></li>
                 <?php else: ?>
                     <li><a class="portfolio-link" data-toggle="modal" href="#modalLogin">Đăng nhập</a></li>
                 <?php endif; ?>
@@ -992,18 +992,21 @@
             <h3 class="title-items">Tạo tài khoản</h3>
             <p></p>
 
-            <form>
+            <form action='register.php' method="POST">
               <div class="container">
                 <label><b>Tên tài khoản</b></label>
-                <input type="text" placeholder="Nhập tên tài khoản" name="uname" required>
+                <input type="text" placeholder="Nhập tên tài khoản" name="rusername" required>
+
+                <label><b>Email</b></label>
+                <input type="text" placeholder="Nhập email" name="remail" required>
 
                 <label><b>Mật khẩu</b></label>
-                <input type="password" placeholder="Nhập mật khẩu" name="psw" required>
+                <input type="password" placeholder="Nhập mật khẩu" name="rpassword" required>
 
                 <label><b>Nhập lại mật khẩu</b></label>
-                <input type="password" placeholder="Nhập lại mật khẩu" name="psw" required>
+                <input type="password" placeholder="Nhập lại mật khẩu" name="rrpassword" required>
 
-                <button type="submit">Đăng kí</button>
+                <button type="submit" name="register">Đăng kí</button>
               </div>
 
               <div class="container">
