@@ -83,7 +83,7 @@
                     <li><a class="portfolio-link" data-toggle="modal" href="#modalLogin">Đăng nhập</a></li>
                 <?php endif; ?>
             		<li><a class="portfolio-link" data-toggle="modal" href="#modalRegister">Tạo tài khoản</a></li>
-            		<li><a href="cart.php" target="_blank">Giỏ hàng</a></li>
+            		<li><a href="viewcart.php" target="_blank">Giỏ hàng</a></li>
             	</ul>
             </li>
           </ul>
@@ -548,7 +548,7 @@
             </ul>
           </div>
           <div class="modal-footer">
-              <a href="cart.php" class="btn btn-primary" style="width: 100%">Đặt hàng ngay</a>
+              <a href="viewproduct.php" class="btn btn-primary" style="width: 100%">Đặt hàng ngay</a>
               <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>              
           </div>
         </div>
@@ -577,7 +577,7 @@
             </ul>
           </div>
           <div class="modal-footer">
-          	  <a href="cart.php" class="btn btn-primary" style="width: 100%">Đặt hàng ngay</a>
+          	  <a href="viewproduct.php" class="btn btn-primary" style="width: 100%">Đặt hàng ngay</a>
               <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>              
           </div>
         </div>
@@ -606,7 +606,7 @@
             </ul>
           </div>
           <div class="modal-footer">
-          	  <a href="cart.php" class="btn btn-primary" style="width: 100%">Đặt hàng ngay</a>
+          	  <a href="viewproduct.php" class="btn btn-primary" style="width: 100%">Đặt hàng ngay</a>
               <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>              
           </div>
         </div>
@@ -635,7 +635,7 @@
             </ul>
           </div>
           <div class="modal-footer">
-          	  <a href="cart.php" class="btn btn-primary" style="width: 100%">Đặt hàng ngay</a>
+          	  <a href="viewproduct.php" class="btn btn-primary" style="width: 100%">Đặt hàng ngay</a>
               <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>              
           </div>
         </div>
@@ -664,7 +664,7 @@
             </ul>
           </div>
           <div class="modal-footer">
-          	  <a href="cart.php" class="btn btn-primary" style="width: 100%">Đặt hàng ngay</a>
+          	  <a href="viewproduct.php" class="btn btn-primary" style="width: 100%">Đặt hàng ngay</a>
               <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>              
           </div>
         </div>
@@ -693,7 +693,7 @@
             </ul>
           </div>
           <div class="modal-footer">
-          	  <a href="cart.php" class="btn btn-primary" style="width: 100%">Đặt hàng ngay</a>
+          	  <a href="viewproduct.php" class="btn btn-primary" style="width: 100%">Đặt hàng ngay</a>
               <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>              
           </div>
         </div>

@@ -97,7 +97,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: black;" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="index.html">DormStop</a>
+            <a class="navbar-brand js-scroll-trigger" href="index.php">DormStop</a>
         </div>
     </nav>
 

@@ -9,9 +9,11 @@
 	
 		//Kiểm tra điều kiện bắt buộc đối với các field không được bỏ trống
 		if($username == "" || $password == "" || $rpassword == "" || $email == "") {
-			echo "Vui lòng nhập đầy đủ thông tin";
+			echo '<script>alert("Vui lòng nhập đầy đủ thông tin")</script>';  
+         	echo '<script>window.location="index.php"</script>';
 		}elseif (strcmp($password,$rpassword) != 0) {
-			echo "Mật khẩu nhập lại không trùng khớp!";
+			echo '<script>alert("Mật khẩu nhập lại không trùng khớp!")</script>';  
+         	echo '<script>window.location="index.php"</script>';
 		}else{
 			// Kiểm tra tài khoản đã tồn tại chưa
 			$sql="SELECT * FROM account WHERE username='$username'";
