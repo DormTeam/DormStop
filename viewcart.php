@@ -1,6 +1,7 @@
 <?php   
  session_start();  
  require 'connect.php';
+
  if(isset($_POST["add_to_cart"]))  
  {  
       if(isset($_SESSION["shopping_cart"]))  
@@ -31,7 +32,7 @@
                 'item_price'         =>     $_POST["hidden_price"],  
                 'item_quantity'      =>     $_POST["quantity"]  
            );  
-           $_SESSION["shopping_cart"][0] = $item_array;  
+           $_SESSION["shopping_cart"][0] = $item_array; 
       }  
  }  
  if(isset($_GET["action"]))  
@@ -48,8 +49,8 @@
                 }  
            }  
       }  
- }  
- ?>  
+ }
+?>  
 
 <!DOCTYPE html>
 <html lang="en">
@@ -137,7 +138,9 @@
                    <td colspan="3" align="right" style="font-weight: bold; font-size: 20pt;">Tổng cộng</td>  
                    <td style="font-weight: bold; font-size: 20pt;" align="center"><?php echo number_format($total); ?>Đ</td>  
                    <td align="center">
-                      <button type="button" class="btn btn-success">Thanh toán ngay <span class="glyphicon glyphicon-play"></span></button> 
+                   <form action="sendmail.php" method="post">
+                      <button type="submit" class="btn btn-success">Đặt hàng <span class="glyphicon glyphicon-play"></span></button> 
+                   </form>
                   </td>  
               </tr>
               <?php  

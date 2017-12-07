@@ -281,8 +281,8 @@
             </div>
           </div>
       </div>
+            <a class="btn btn-xl" style="float: right;" href="viewproduct.php">Tất cả sản phẩm >></a>
         </div>
-      </div>
     </section>
 
 
