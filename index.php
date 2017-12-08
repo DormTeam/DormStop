@@ -969,7 +969,7 @@
               </div>
 
               <div class="container">
-                <button type="button" class="cancelbtn">Cancel</button>
+                <button type="button" class="cancelbtn" data-dismiss="modal">Cancel</button>
                 <span class="psw"> <a href="#">Quên mật khẩu?</a></span>
               </div>
             </form>             
@@ -1018,7 +1018,7 @@
               </div>
 
               <div class="container">
-                <button type="button" class="cancelbtn">Cancel</button>
+                <button type="button" class="cancelbtn" data-dismiss="modal">Cancel</button>
               </div>
             </form>             
           </div>
