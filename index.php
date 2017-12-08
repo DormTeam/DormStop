@@ -280,10 +280,12 @@
               <p class="text-muted">12k/phần</p>
             </div>
           </div>
+          <div class="col-lg-12">
+      <div class="text-center">
+        <a href="viewproduct.php" class="btn btn-xl" role="button">Tất cả sản phẩm >></a>
       </div>
-            <a class="btn btn-xl" style="float: right;" href="viewproduct.php">Tất cả sản phẩm >></a>
-        </div>
     </section>
+    
 
 
     <!--Discount-->
