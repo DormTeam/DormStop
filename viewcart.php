@@ -80,9 +80,7 @@
     <link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+   
     <!-- Custom styles for this template -->
     <link href="css/agency.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/font.css">
@@ -91,19 +89,32 @@
 
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
 
 </head>
 
 <body id="page-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: black;" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: black; height: 100px" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="index.php">DormStop</a>
+            <a class="navbar-brand" href="index.php">DormStop</a>
+        </div>
+        <div class="collapse navbar-collapse menu-font" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#">
+              <?php
+                if(isset($_COOKIE['username']))
+                  echo $_COOKIE['username'];
+              ?></a>
+              </ul>
+            </li>
+          </ul>
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container" style="margin-top: 150px">
     <div style="clear:both"></div>  
     <br />  
     <h3 align="center">Thông tin đặt hàng</h3>  
@@ -138,13 +149,14 @@
                    <td colspan="3" align="right" style="font-weight: bold; font-size: 20pt;">Tổng cộng</td>  
                    <td style="font-weight: bold; font-size: 20pt;" align="center"><?php echo number_format($total); ?>Đ</td>  
                    <td align="center">
-                   <form action="sendmail.php" method="post">
                     <?php if(isset($_COOKIE['username'])): ?> 
-                      <button type="submit" name="order" class="btn btn-success">Đặt hàng <span class="glyphicon glyphicon-play"></span></button> 
+                      <form action="sendmail.php" method="post">
+                      <button type="submit" name="order" class="btn btn-success">Đặt hàng</button> 
+                      </form>
                     <?php else: ?>  
-                      <button data-toggle="modal" href="#" class="btn btn-success">Vui lòng đăng nhập để đặt hàng</button>
+                      <button data-toggle="modal" href="#modalLogin" class="portfolio-link btn btn-success">Vui lòng đăng nhập để đặt hàng</button>
                     <?php endif; ?>
-                   </form>
+                   
                   </td>  
               </tr>
               <?php  
@@ -156,6 +168,43 @@
         </div>    
     </div>
 
+<!-- Modal Login -->
+    <div id="modalLogin" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" style="width: 500px; height: 500px">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <p></p>
+          </div>
+          <div class="modal-body">
+            <h3 class="title-items">Đăng nhập</h3>
+            <p></p>
+
+            <form method="POST" action=login.php?do=login>
+              <div class="container">
+                <label><b>Tên tài khoản</b></label>
+                <input type="text" placeholder="Nhập tên tài khoản" name="username" required>
+
+                <label><b>Mật khẩu</b></label>
+                <input type="password" placeholder="Nhập mật khẩu" name="password" required>
+
+                <button type="submit" name="login">Đăng nhập</button>
+                <input type="checkbox" checked="checked"> Nhớ mật khẩu
+              </div>
+
+              <div class="container">
+                <button type="button" class="cancelbtn">Cancel</button>
+                <span class="psw"> <a href="#">Quên mật khẩu?</a></span>
+              </div>
+            </form>             
+          </div>
+          <p></p>
+          <p></p>
+          <p></p>
+        </div>
+      </div>
+    </div>
 
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>
