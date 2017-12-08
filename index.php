@@ -1000,6 +1000,12 @@
                 <label><b>Email</b></label>
                 <input type="text" placeholder="Nhập email" name="remail" required>
 
+                <label><b>Số điện thoại</b></label>
+                <input type="text" placeholder="Nhập số điện thoại" name="rnumber" required>
+                
+                <label><b>Địa chỉ</b></label>
+                <input type="text" placeholder="Nhập địa chỉ" name="raddress" required>
+
                 <label><b>Mật khẩu</b></label>
                 <input type="password" placeholder="Nhập mật khẩu" name="rpassword" required>
 

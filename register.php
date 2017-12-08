@@ -4,11 +4,14 @@
 		//lấy thông tin từ các form bằng phương thức POST
 		$username = $_POST["rusername"];
 		$email = $_POST["remail"];
+		$phonenumber = $_POST["rnumber"];
+		$address = $_POST["raddress"];
 		$password = $_POST["rpassword"];
 		$rpassword = $_POST["rrpassword"];
 	
 		//Kiểm tra điều kiện bắt buộc đối với các field không được bỏ trống
-		if($username == "" || $password == "" || $rpassword == "" || $email == "") {
+		if($username == "" || $password == "" || $rpassword == "" || $email == "" || $phonenumber == "" || $address == "")
+		{
 			echo '<script>alert("Vui lòng nhập đầy đủ thông tin")</script>';  
          	echo '<script>window.location="index.php"</script>';
 		}elseif (strcmp($password,$rpassword) != 0) {
@@ -20,17 +23,22 @@
 			$check=mysqli_query($connect, $sql);
 
 			if(mysqli_num_rows($check)  > 0){
-				echo "Tài khoản đã tồn tại";
+				echo '<script>alert("Tài khoản đã tồn tại")</script>';  
+         		echo '<script>window.location="index.php"</script>';
 			}else{
 				//thực hiện việc lưu trữ dữ liệu vào db
 				$sql = "INSERT INTO account(
 					username,
 					password,
-					email
+					email,
+					phonenumber,
+					address
 					) VALUES (
 					'$username',
 					'$password',
-					'$email'
+					'$email',
+					'$phonenumber',
+					'$address'
 					)";
 				    // thực thi câu $sql với biến conn lấy từ file connection.php
 				mysqli_query($connect,$sql);
