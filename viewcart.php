@@ -139,7 +139,11 @@
                    <td style="font-weight: bold; font-size: 20pt;" align="center"><?php echo number_format($total); ?>Đ</td>  
                    <td align="center">
                    <form action="sendmail.php" method="post">
-                      <button type="submit" class="btn btn-success">Đặt hàng <span class="glyphicon glyphicon-play"></span></button> 
+                    <?php if(isset($_COOKIE['username'])): ?> 
+                      <button type="submit" name="order" class="btn btn-success">Đặt hàng <span class="glyphicon glyphicon-play"></span></button> 
+                    <?php else: ?>  
+                      <button data-toggle="modal" href="#" class="btn btn-success">Vui lòng đăng nhập để đặt hàng</button>
+                    <?php endif; ?>
                    </form>
                   </td>  
               </tr>
