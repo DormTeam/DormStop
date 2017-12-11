@@ -211,7 +211,7 @@
             <h3 class="title-items">Đăng nhập</h3>
             <p></p>
 
-            <form method="POST" action=login.php?do=login>
+            <form method="POST" action=login_cartview.php?do=login>
               <div class="container">
                 <label><b>Tên tài khoản</b></label>
                 <input type="text" placeholder="Nhập tên tài khoản" name="username" required>
@@ -252,7 +252,7 @@
             <h3 class="title-items">Tạo tài khoản</h3>
             <p></p>
 
-            <form action='register.php' method="POST">
+            <form action='register_cartview.php' method="POST">
               <div class="container">
                 <label><b>Tên tài khoản</b></label>
                 <input type="text" placeholder="Nhập tên tài khoản" name="rusername" required>
@@ -294,7 +294,7 @@
 
 <!-- Custom scripts for this template -->
 <script src="js/agency.min.js"></script>
-<script src="js/login.js"></script>
+<script src="js/logout_cartview.js"></script>
 
 
 </body>

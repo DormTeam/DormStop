@@ -1057,7 +1057,7 @@
     <script src="js/creative.min.js"></script>
     <script src="js/dropdown-btn.js"></script>
     
-    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/logout.js"></script>
     <script type="text/javascript" src="js/custom.js"></script>
 
   </body>
