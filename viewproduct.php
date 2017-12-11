@@ -39,6 +39,7 @@
 
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/search.css">
 
 </head>
 
@@ -54,7 +55,29 @@
         </a>
     </nav>
     <h2 align="center" style="padding: 30px">Các sản phẩm hiện đang có tại DormStop</h2> 
+
+
     <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div id="imaginary_container">
+            <form action="viewproduct.php" method="get"> 
+                <div class="input-group stylish-input-group">
+                    <input name="keyword" type="text" class="form-control"  placeholder="Tìm kiếm theo tên sản phẩm..." >
+                    <span class="input-group-addon">
+                        <button type="submit" name="search" onclick="hide_products()">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>  
+                    </span>
+                </div>
+            </form>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--View all products from database--> 
+    <div id="view_all_products" class="container">
     <?php  
         $query = "SELECT * FROM product ORDER BY id ASC";  
         $result = mysqli_query($connect, $query);  
@@ -88,6 +111,61 @@
         <?php }  
         } ?>    
     </div>
+
+    <script type="text/javascript">
+      function hide_products() {
+        document.getElementById("view_all_products").innerHTML = '';
+      }        
+    </script>
+
+
+
+
+    <!--Search from database -->
+    <div class="container">
+    <?php
+      if(isset($_GET["search"])) :?>
+      <?php
+        $query = "SELECT * FROM product ORDER BY id ASC";  
+        $result = mysqli_query($connect, $query); 
+        $keyword = $_GET["keyword"]; 
+        if(mysqli_num_rows($result) > 0)  {  
+         while($row = mysqli_fetch_array($result))  
+         {?> 
+            <div>
+                <?php if($row["name"]==$keyword) :?>  
+                 <form method="post" action="viewcart.php?action=add&id=<?php echo $row["id"]; ?>">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                      <div class="card h-100">
+                        <img class="card-img-top" src="<?php echo $row["imgurl"]; ?>">
+                        <div class="card-body">
+                          <h3 align="center" class="card-title">
+                            <a><?php echo $row["name"]; ?></a>
+                          </h3>
+                          <h5 align="center" style="font-size: 14pt"><?php echo $row["price"]; ?>Đ</h5>
+                          <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />  
+                          <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />           
+                        </div>
+                          <h6 align="center">Chọn số lượng:</h6>                                            
+                          <input class="text-center form-control" type="number" name="quantity" value="1" />
+                        <p></p>
+                        <input id="atcart" type="submit" name="add_to_cart" class="btn btn-success" value="Thêm vào giỏ hàng" />
+                        <div align="center" class="card-footer">
+                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
+                        </div>
+                      </div>
+                    </div>
+                 </form>
+                 <?php endif; ?>   
+            </div>  
+        <?php }  
+        } ?>
+        <?php echo "<script>document.getElementById('view_all_products').innerHTML = ''</script>"; ?>
+        <?php endif; ?>    
+    </div>
+
+  
+    
 
 
 <!-- Bootstrap core JavaScript -->
