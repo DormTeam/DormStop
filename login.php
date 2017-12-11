@@ -18,23 +18,12 @@ if (isset($_POST['login']))
     $result = $db->executeQuery("SELECT * FROM account WHERE username='$username' AND password='$password';");
 
     if ($result->num_rows > 0) {
-        if(isset($_SESSION["shopping_cart"])) {
-            setcookie("username", $username);
-            echo '<script>window.location="viewcart.php"</script>';
-        } else {
-            setcookie("username", $username);
-            echo '<script>window.location="index.php"</script>';
-        }
+        setcookie("username", $username);
+        echo '<script>window.location="index.php"</script>';
     }   
     else {
-        if(isset($_SESSION["shopping_cart"])) {
-            echo '<script>alert("Sai tên đăng nhập/Mật khẩu")</script>';  
-            echo '<script>window.location="viewcart.php"</script>';
-        }
-        else {
-            echo '<script>alert("Sai tên đăng nhập/Mật khẩu")</script>';  
-            echo '<script>window.location="index.php"</script>';
-        }
+        echo '<script>alert("Sai tên đăng nhập/Mật khẩu")</script>';  
+        echo '<script>window.location="index.php"</script>';
     }
     $db -> close();
 }

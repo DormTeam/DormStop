@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>DormStop - Depend on the needs</title>
+    <title>DormStop - Tất cả sản phẩm</title>
     <link rel="shortcut icon" href="img/logos/favicon.ico" />
 
 
@@ -47,8 +47,11 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: black;" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="index.php">DormStop</a>
+            <a class="navbar-brand js-scroll-trigger navbar-collapse" href="index.php">DormStop</a>
         </div>
+        <a href="viewcart.php" class="btn btn-warning btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Giỏ hàng
+        </a>
     </nav>
     <h2 align="center" style="padding: 30px">Các sản phẩm hiện đang có tại DormStop</h2> 
     <div class="container">

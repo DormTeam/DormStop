@@ -68,7 +68,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>DormStop - Depend on the needs</title>
+    <title>DormStop - Giỏ hàng</title>
     <link rel="shortcut icon" href="img/logos/favicon.ico" />
 
 
@@ -108,12 +108,21 @@
         </div>
         <div class="collapse navbar-collapse menu-font" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">
+            <li class="nav-item dropdown">
+              <a class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown" href="#">
               <?php
                 if(isset($_COOKIE['username']))
                   echo $_COOKIE['username'];
+                else
+                  echo 'Khách hàng';
               ?></a>
+              <ul class="dropdown-menu dropdown-content">
+                <?php if(isset($_COOKIE['username'])): ?> 
+                    <li><a href="#" id="log_out">Đăng xuất</a></li>
+                <?php else: ?>
+                    <li><a class="portfolio-link" data-toggle="modal" href="#modalLogin">Đăng nhập</a></li>
+                <?php endif; ?>
+                <li><a class="portfolio-link" data-toggle="modal" href="#modalRegister">Tạo tài khoản</a></li>
               </ul>
             </li>
           </ul>
@@ -285,6 +294,7 @@
 
 <!-- Custom scripts for this template -->
 <script src="js/agency.min.js"></script>
+<script src="js/login.js"></script>
 
 
 </body>
