@@ -966,23 +966,26 @@
 
                 <button type="submit" name="login">Đăng nhập</button>
                 <input type="checkbox" checked="checked"> Nhớ mật khẩu
+                <div>
+                  <p></p>
+                  <a data-dismiss="modal" data-toggle="modal"  href="#modalRegister"  style="float: right; color: green;">Chưa có tài khoản? Click để đăng ký</a>
+                </div>
               </div>
-
               <div class="container">
-                <button type="button" class="cancelbtn" data-dismiss="modal">Cancel</button>
                 <span class="psw"> <a href="#">Quên mật khẩu?</a></span>
+                <button style="float: right; color: white" type="button" class="btn btn-warning"" data-dismiss="modal">Cancel</button>
               </div>
-            </form>             
-          </div>
-          <p></p>
-          <p></p>
-          <p></p>
+            </form>
+            </div>
+              <p></p>
+              <p></p>
+              <p></p>
+            </div>             
         </div>
-      </div>
     </div>
 
 <!-- Modal Register -->
-    <div id="modalRegister" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div style="overflow-y:auto;" id="modalRegister" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" style="width: 500px; height: 500px">
 
         <!-- Modal content-->
@@ -1018,7 +1021,7 @@
               </div>
 
               <div class="container">
-                <button type="button" class="cancelbtn" data-dismiss="modal">Cancel</button>
+                <button style="float: right; color: white" type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
               </div>
             </form>             
           </div>

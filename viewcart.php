@@ -212,11 +212,62 @@
 
                 <button type="submit" name="login">Đăng nhập</button>
                 <input type="checkbox" checked="checked"> Nhớ mật khẩu
+                <div>
+                  <p></p>
+                  <a data-dismiss="modal" data-toggle="modal"  href="#modalRegister"  style="float: right; color: green;">Chưa có tài khoản? Click để đăng ký</a>
+                </div>
+              </div>
+              <div class="container">
+                <span class="psw"> <a href="#">Quên mật khẩu?</a></span>
+                <button style="float: right; color: white" type="button" class="btn btn-warning"" data-dismiss="modal">Cancel</button>
+              </div>
+            </form>
+            </div>
+              <p></p>
+              <p></p>
+              <p></p>
+            </div>             
+        </div>
+    </div>
+    
+<!-- Modal Register -->
+    <div style="overflow-y:auto;" id="modalRegister" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" style="width: 500px; height: 500px">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <p></p>
+          </div>
+          <div class="modal-body">
+            <h3 class="title-items">Tạo tài khoản</h3>
+            <p></p>
+
+            <form action='register.php' method="POST">
+              <div class="container">
+                <label><b>Tên tài khoản</b></label>
+                <input type="text" placeholder="Nhập tên tài khoản" name="rusername" required>
+
+                <label><b>Email</b></label>
+                <input type="text" placeholder="Nhập email" name="remail" required>
+
+                <label><b>Số điện thoại</b></label>
+                <input type="text" placeholder="Nhập số điện thoại" name="rnumber" required>
+                
+                <label><b>Địa chỉ</b></label>
+                <input type="text" placeholder="Nhập địa chỉ" name="raddress" required>
+
+                <label><b>Mật khẩu</b></label>
+                <input type="password" placeholder="Nhập mật khẩu" name="rpassword" required>
+
+                <label><b>Nhập lại mật khẩu</b></label>
+                <input type="password" placeholder="Nhập lại mật khẩu" name="rrpassword" required>
+
+                <button type="submit" name="register">Đăng kí</button>
               </div>
 
               <div class="container">
-                <button type="button" class="cancelbtn" data-dismiss="modal">Cancel</button>
-                <span class="psw"> <a href="#">Quên mật khẩu?</a></span>
+                <button style="float: right; color: white" type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
               </div>
             </form>             
           </div>
