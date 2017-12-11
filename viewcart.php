@@ -3,38 +3,44 @@
  require 'connect.php';
 
  if(isset($_POST["add_to_cart"]))  
- {  
-      if(isset($_SESSION["shopping_cart"]))  
-      {  
-           $item_array_id = array_column($_SESSION["shopping_cart"], "item_id");  
-           if(!in_array($_GET["id"], $item_array_id))  
-           {  
-                $count = count($_SESSION["shopping_cart"]);  
-                $item_array = array(  
-                     'item_id'       =>     $_GET["id"],  
-                     'item_name'     =>     $_POST["hidden_name"],  
-                     'item_price'    =>     $_POST["hidden_price"],  
-                     'item_quantity' =>     $_POST["quantity"]  
-                );  
-                $_SESSION["shopping_cart"][$count] = $item_array;  
-           }  
-           else  
-           {
-              echo '<script>alert("Sản phẩm đã có trong giỏ hàng! Vui lòng kiểm tra lại.")</script>';  
-              echo '<script>window.location="viewcart.php"</script>';  
-           }  
-      }  
-      else  
-      {  
-           $item_array = array(  
-                'item_id'            =>     $_GET["id"],  
-                'item_name'          =>     $_POST["hidden_name"],  
-                'item_price'         =>     $_POST["hidden_price"],  
-                'item_quantity'      =>     $_POST["quantity"]  
-           );  
-           $_SESSION["shopping_cart"][0] = $item_array; 
-      }  
- }  
+ {
+    if($_POST["quantity"] <= 0){
+      echo '<script>alert("Số lượng sản phẩm nhập vào không hợp lệ!")</script>';  
+      echo '<script>window.location="viewproduct.php"</script>';  
+    } else {  
+        if(isset($_SESSION["shopping_cart"])) 
+        {  
+             $item_array_id = array_column($_SESSION["shopping_cart"], "item_id");  
+             if(!in_array($_GET["id"], $item_array_id))  
+             {  
+                  $count = count($_SESSION["shopping_cart"]);  
+                  $item_array = array(  
+                       'item_id'       =>     $_GET["id"],  
+                       'item_name'     =>     $_POST["hidden_name"],  
+                       'item_price'    =>     $_POST["hidden_price"],  
+                       'item_quantity' =>     $_POST["quantity"]  
+                  );  
+                  $_SESSION["shopping_cart"][$count] = $item_array;  
+             }  
+             else  
+             {
+                echo '<script>alert("Sản phẩm đã có trong giỏ hàng! Vui lòng kiểm tra lại.")</script>';  
+                echo '<script>window.location="viewcart.php"</script>';  
+             }  
+        }  
+        else  
+        {  
+             $item_array = array(  
+                  'item_id'            =>     $_GET["id"],  
+                  'item_name'          =>     $_POST["hidden_name"],  
+                  'item_price'         =>     $_POST["hidden_price"],  
+                  'item_quantity'      =>     $_POST["quantity"]  
+             );  
+             $_SESSION["shopping_cart"][0] = $item_array; 
+        }
+    }  
+ }
+   
  if(isset($_GET["action"]))  
  {  
       if($_GET["action"] == "delete")  
@@ -161,10 +167,25 @@
               </tr>
               <?php  
               }  
-              ?>  
+              ?>
+              <tr>
+                <td>   </td>
+                <td>   </td>                                                
+                <td>
+                  <!--
+                  <form action="viewcart.php" method="post">
+                    <button type="submit" name="update_cart" class="btn btn-info">Cập nhật giỏ hàng
+                    </button> 
+                  </form> -->
+                </td>
+                <td>   </td>
+                <td>
+                    <form>
+                      <button class="btn btn-warning" style="color: white;" formaction="viewproduct.php">Tiếp tục mua hàng</button>
+                    </form>
+                </td>
+              </tr>
          </table>
-          
-         <a href="viewproduct.php" class="btn btn-primary" style="float: right;">Tiếp tục mua hàng</a> 
         </div>    
     </div>
 
