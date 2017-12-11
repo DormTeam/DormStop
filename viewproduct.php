@@ -68,14 +68,15 @@
                             <a><?php echo $row["name"]; ?></a>
                           </h3>
                           <h5 align="center" style="font-size: 14pt"><?php echo $row["price"]; ?>Đ</h5>
-                            <input class="text-center" type="number" name="quantity" class="form-control" value="1" />
-                            <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />  
-                            <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />  
-                            <input id="atcart" type="submit" name="add_to_cart" class="btn btn-success" value="Add to Cart" />
-                          <p class="card-text"><?php echo $row["description"]; ?></p>
+                          <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />  
+                          <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />           
                         </div>
-                        <div class="card-footer">
-                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                          <h6 align="center">Chọn số lượng:</h6>                                            
+                          <input class="text-center form-control" type="number" name="quantity" value="1" />
+                        <p></p>
+                        <input id="atcart" type="submit" name="add_to_cart" class="btn btn-success" value="Thêm vào giỏ hàng" />
+                        <div align="center" class="card-footer">
+                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
                         </div>
                       </div>
                     </div>
