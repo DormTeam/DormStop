@@ -65,7 +65,7 @@
                 <div class="input-group stylish-input-group">
                     <input name="keyword" type="text" class="form-control"  placeholder="Tìm kiếm theo tên sản phẩm..." >
                     <span class="input-group-addon">
-                        <button type="submit" name="search" onclick="hide_products()">
+                        <button type="submit" name="search">
                             <span class="glyphicon glyphicon-search"></span>
                         </button>  
                     </span>
@@ -112,28 +112,19 @@
         } ?>    
     </div>
 
-    <script type="text/javascript">
-      function hide_products() {
-        document.getElementById("view_all_products").innerHTML = '';
-      }        
-    </script>
-
-
-
-
     <!--Search from database -->
     <div class="container">
     <?php
       if(isset($_GET["search"])) :?>
       <?php
-        $query = "SELECT * FROM product ORDER BY id ASC";  
+        $keyword = $_GET["keyword"];
+        $query = "SELECT * FROM product WHERE name LIKE '%$keyword%'";  
         $result = mysqli_query($connect, $query); 
-        $keyword = $_GET["keyword"]; 
+         
         if(mysqli_num_rows($result) > 0)  {  
          while($row = mysqli_fetch_array($result))  
          {?> 
-            <div>
-                <?php if($row["name"]==$keyword) :?>  
+            <div>  
                  <form method="post" action="viewcart.php?action=add&id=<?php echo $row["id"]; ?>">
                     <div class="col-lg-4 col-md-6 mb-4">
                       <div class="card h-100">
@@ -155,15 +146,13 @@
                         </div>
                       </div>
                     </div>
-                 </form>
-                 <?php endif; ?>   
+                 </form>   
             </div>  
         <?php }  
         } ?>
         <?php echo "<script>document.getElementById('view_all_products').innerHTML = ''</script>"; ?>
         <?php endif; ?>    
     </div>
-
   
     
 
