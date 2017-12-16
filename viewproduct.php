@@ -1,7 +1,9 @@
 <?php   
- session_start();  
- require 'connect.php'; 
- ?>  
+  session_start(); 
+
+  //Connect to database  
+  require 'connect.php'; 
+?>  
 
 <!DOCTYPE html>
 <html lang="en">
@@ -75,16 +77,21 @@
         </div>
       </div>
     </div>
+    <!-- End Navigation -->
     
-    <!--View all products from database--> 
+    <!-- View all products from database --> 
     <div id="view_all_products" class="container">
-    <?php  
+    <?php
+        //Query all product from database  
         $query = "SELECT * FROM product ORDER BY id ASC";  
-        $result = mysqli_query($connect, $query);  
-        if(mysqli_num_rows($result) > 0)  {  
+        $result = mysqli_query($connect, $query);
+
+        if(mysqli_num_rows($result) > 0)  {
+         //fetch every info in the database  
          while($row = mysqli_fetch_array($result))  
          {?> 
-            <div>  
+            <div>
+                 <!-- Echo data base on html & css (Grid view) -->  
                  <form method="post" action="viewcart.php?action=add&id=<?php echo $row["id"]; ?>">
                     <div class="col-lg-4 col-md-6 mb-4">
                       <div class="card h-100">
@@ -109,22 +116,29 @@
                  </form>  
             </div>  
         <?php }  
-        } ?>    
+        } ?>
+        <!-- End Echo data -->     
     </div>
+    <!-- End View all products from database-->
 
-    <!--Search from database -->
+    <!-- Search from database -->
     <div class="container">
     <?php
       if(isset($_GET["search"])) :?>
       <?php
+        //Get keyword from POST method
         $keyword = $_GET["keyword"];
+
+        //Query to find data "LIKE" keyword
         $query = "SELECT * FROM product WHERE name LIKE '%$keyword%'";  
         $result = mysqli_query($connect, $query); 
-         
+
+        //fetch result 
         if(mysqli_num_rows($result) > 0)  {  
          while($row = mysqli_fetch_array($result))  
          {?> 
             <div>  
+                <!-- Echo data base on html & css (Grid view) -->  
                  <form method="post" action="viewcart.php?action=add&id=<?php echo $row["id"]; ?>">
                     <div class="col-lg-4 col-md-6 mb-4">
                       <div class="card h-100">
@@ -150,9 +164,13 @@
             </div>  
         <?php }  
         } ?>
+        <!-- End Echo data -->
+
+        <!-- Erase all product available except searched product -->  
         <?php echo "<script>document.getElementById('view_all_products').innerHTML = ''</script>"; ?>
         <?php endif; ?>    
     </div>
+    <!-- End Search from database -->
   
     
 

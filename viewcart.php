@@ -1,29 +1,39 @@
 <?php   
- session_start();  
+ session_start();
+
+ //Connect to database  
  require 'connect.php';
 
  if(isset($_POST["add_to_cart"]))  
- {
+ {  
+    //Check if quantity input <= 0
     if($_POST["quantity"] <= 0){
       echo '<script>alert("Số lượng sản phẩm nhập vào không hợp lệ!")</script>';  
       echo '<script>window.location="viewproduct.php"</script>';  
     } else {  
         if(isset($_SESSION["shopping_cart"])) 
         {  
+             //Add product to cart if doesn't exist
              $item_array_id = array_column($_SESSION["shopping_cart"], "item_id");  
              if(!in_array($_GET["id"], $item_array_id))  
-             {  
-                  $count = count($_SESSION["shopping_cart"]);  
+             {    
+                  //count number of occurrences of product in session
+                  $count = count($_SESSION["shopping_cart"]);
+
+                  //Get POST information inside the form & add to array 
                   $item_array = array(  
                        'item_id'       =>     $_GET["id"],  
                        'item_name'     =>     $_POST["hidden_name"],  
                        'item_price'    =>     $_POST["hidden_price"],  
                        'item_quantity' =>     $_POST["quantity"]  
-                  );  
+                  );
+
+                  //Add to session array  
                   $_SESSION["shopping_cart"][$count] = $item_array;  
              }  
              else  
              {
+                //inform if product is existed
                 echo '<script>alert("Sản phẩm đã có trong giỏ hàng! Vui lòng kiểm tra lại.")</script>';  
                 echo '<script>window.location="viewcart.php"</script>';  
              }  
@@ -40,7 +50,8 @@
         }
     }  
  }
-   
+ 
+ //Remove product  
  if(isset($_GET["action"]))  
  {  
       if($_GET["action"] == "delete")  
@@ -110,25 +121,36 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
               <a class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown" href="#">
+
+              <!-- Check cookies for showing username instead of 'Khách hàng' -->
               <?php
                 if(isset($_COOKIE['username']))
                   echo $_COOKIE['username'];
                 else
                   echo 'Khách hàng';
-              ?></a>
+              ?>
+              <!-- End check cookies -->
+
+              </a>
               <ul class="dropdown-menu dropdown-content">
+
+                <!-- Check cookies for showing corresponding logout and login -->
                 <?php if(isset($_COOKIE['username'])): ?> 
                     <li><a href="#" id="log_out">Đăng xuất</a></li>
                 <?php else: ?>
                     <li><a class="portfolio-link" data-toggle="modal" href="#modalLogin">Đăng nhập</a></li>
                 <?php endif; ?>
+                <!--End check cookies -->
+
                 <li><a class="portfolio-link" data-toggle="modal" href="#modalRegister">Tạo tài khoản</a></li>
               </ul>
             </li>
           </ul>
         </div>
     </nav>
+    <!-- End Navigation -->
 
+    <!-- Cart information -->
     <div class="container" style="margin-top: 150px">
     <div style="clear:both"></div>  
     <br />  
@@ -141,7 +163,9 @@
                    <th class="text-center" width="20%" style="font-size: 14pt;">Giá</th>  
                    <th class="text-center" width="15%" style="font-size: 14pt;">Tổng tiền</th>  
                    <th class="text-center" width="15%" style="font-size: 14pt;">Chỉnh sửa</th>  
-              </tr>  
+              </tr>
+
+              <!-- Get order information form productview page -->  
               <?php   
               if(!empty($_SESSION["shopping_cart"]))  
               {  
@@ -159,11 +183,15 @@
               <?php  
                         $total = $total + ($values["item_quantity"] * $values["item_price"]);  
                    }  
-              ?>  
+              ?>
+              <!-- End Get order information form productview page -->
+
               <tr>  
                    <td colspan="3" align="right" style="font-weight: bold; font-size: 20pt;">Tổng cộng</td>  
                    <td style="font-weight: bold; font-size: 20pt;" align="center"><?php echo number_format($total); ?>Đ</td>  
                    <td align="center">
+
+                    <!-- Require people login to order -->
                     <?php if(isset($_COOKIE['username'])): ?> 
                       <form action="sendmail.php" method="post">
                       <button type="submit" name="order" class="btn btn-success">Đặt hàng</button> 
@@ -171,7 +199,8 @@
                     <?php else: ?>  
                       <button data-toggle="modal" href="#modalLogin" class="portfolio-link btn btn-success">Vui lòng đăng nhập để đặt hàng</button>
                     <?php endif; ?>
-                   
+                    <!-- End Require people login to order -->
+
                   </td>  
               </tr>
               <?php  
@@ -198,7 +227,7 @@
         </div>    
     </div>
 
-<!-- Modal Login -->
+    <!-- Modal Login -->
     <div id="modalLogin" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" style="width: 500px; height: 500px">
 
@@ -238,8 +267,9 @@
             </div>             
         </div>
     </div>
+    <!-- End Modal Login -->
     
-<!-- Modal Register -->
+    <!-- Modal Register -->
     <div style="overflow-y:auto;" id="modalRegister" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" style="width: 500px; height: 500px">
 
@@ -286,6 +316,9 @@
         </div>
       </div>
     </div>
+    <!-- End Modal Register -->
+
+<!-- End Cart information -->
 
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>

@@ -1,30 +1,31 @@
 <?php
-session_start();
-header('Content-Type: text/html; charset=UTF-8');
- 
-if (isset($_POST['login'])) 
-{
-    //Kết nối tới database
-    //require 'connect.php';
-    require 'data_access_helper.php';
-     
-    //Lấy dữ liệu nhập vào
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    session_start();
+    header('Content-Type: text/html; charset=UTF-8');
 
-    $db = new DataAccessHelper;
-    $db->connect();
-     
-    $result = $db->executeQuery("SELECT * FROM account WHERE username='$username' AND password='$password';");
+    //Connect to database
+    require 'connect.php'; 
 
-    if ($result->num_rows > 0) {
-        setcookie("username", $username);
-        echo '<script>window.location="index.php"</script>';
-    }   
-    else {
-        echo '<script>alert("Sai tên đăng nhập/Mật khẩu")</script>';  
-        echo '<script>window.location="index.php"</script>';
+    //if get POST login from LOGIN form
+    if (isset($_POST['login'])) 
+    {
+        //Get POST information inside the form
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        //Query for checking the correct account
+        $sql="SELECT * FROM account WHERE username='$username' AND password='$password';";
+        $check=mysqli_query($connect, $sql);
+
+        if(mysqli_num_rows($check)  > 0) {
+            //Set cookie
+            setcookie("username", $username);
+            //Return to index page
+            echo '<script>window.location="index.php"</script>';
+       }else {
+            echo '<script>alert("Sai tên đăng nhập/Mật khẩu")</script>';  
+            echo '<script>window.location="index.php"</script>';
+        }     
     }
-    $db -> close();
-}
+    //Close database
+    mysqli_close($connect);
 ?>

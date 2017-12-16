@@ -68,28 +68,41 @@
               <a class="nav-link js-scroll-trigger" href="#contact">Liên hệ</a>
             </li>
 
+            <!-- Customer dropdown section -->
             <li class="nav-item dropdown">
             	<a class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown" href="#">
+
+              <!-- Check cookies for showing username instead of 'Khách hàng' -->
               <?php
                 if(isset($_COOKIE['username']))
                   echo $_COOKIE['username'];
                 else
                   echo 'Khách hàng';
               ?></a>
+              <!-- End check cookies -->
+
             	<ul class="dropdown-menu dropdown-content">
+
+                <!-- Check cookies for showing corresponding logout and login -->
                 <?php if(isset($_COOKIE['username'])): ?> 
                     <li><a href="#" id="log_out">Đăng xuất</a></li>
                 <?php else: ?>
                     <li><a class="portfolio-link" data-toggle="modal" href="#modalLogin">Đăng nhập</a></li>
                 <?php endif; ?>
+                <!--End check cookies -->
+
             		<li><a class="portfolio-link" data-toggle="modal" href="#modalRegister">Tạo tài khoản</a></li>
             		<li><a href="viewcart.php" target="_blank">Giỏ hàng</a></li>
             	</ul>
             </li>
+            <!-- End Customer section -->
+
           </ul>
         </div>
       </div>
     </nav>
+    <!-- End Navigation -->
+
 
     <!-- Header -->
     <header>
@@ -135,8 +148,10 @@
         </a>
       </div>
     </header>
+    <!-- End Header -->
 
-    <!-- Introduction -->
+
+    <!-- Introduction Section -->
     <section id="introduction" style="padding-bottom: 30px">
       <div class="container">
         <div class="row">
@@ -173,8 +188,10 @@
         </div>
       </div>
     </section>
+    <!-- End Introduction Section -->
 
-    <!-- Products Grid -->
+
+    <!-- Products Grid Section-->
     <section class="bg-light" id="portfolio" style="padding-top: 100px; padding-bottom: 0">
       <div class="container">
         <div class="row">
@@ -285,10 +302,10 @@
         <a href="viewproduct.php" class="btn btn-xl" role="button">Tất cả sản phẩm >></a>
       </div>
     </section>
-    
+    <!-- End Products Grid Section -->
 
 
-    <!--Discount-->
+    <!-- Discount Section-->
     <section id="about" style="padding-bottom: 0">
     	<div class="col-lg-12 text-center">
             <h2 class="section-heading">Đang khuyến mãi</h2>
@@ -333,6 +350,7 @@
         </a>
       </div>    	
     </section>
+    <!-- End Discount Section -->
     
 
     <!-- News Section-->
@@ -439,10 +457,10 @@
         </div>
         <!-- Container Ends -->
     </section>
-    <!-- news Section Ends -->
+    <!-- End News Section -->
     
 
-    <!-- Contact -->
+    <!-- Contact Section-->
     <section id="contact">
       <div class="container">
         <div class="row">
@@ -453,6 +471,9 @@
         </div>
         <div class="row">
           <div class="col-lg-12">
+
+            <!-- POST method to contact.php for sending message from customer to server -->
+            <!-- POST every names attribute of input tag inside the form to process data-->
             <form method="POST" action="contact.php">
               <div class="row">
                 <div class="col-md-6">
@@ -482,10 +503,14 @@
                 </div>
               </div>
             </form>
+            <!-- End POST method -->
+
           </div>
         </div>
       </div>
     </section>
+    <!-- End Contact Section-->
+
 
     <!-- Footer -->
     <footer>
@@ -526,8 +551,10 @@
         </div>
       </div>
     </footer>
+    <!-- End Footer -->
 
-    <!-- Portfolio Modals -->
+
+    <!-- Portfolio Modals For Products View - 1 Modal for 1 product -->
     <!-- Modal 1 -->
     <div id="portfolioModal1" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
@@ -701,8 +728,11 @@
         </div>
       </div>
     </div>
+    <!-- End Portfolio Modals For Products View -->
 
-    <!-- Modal N-1 -->
+    
+    <!-- Portfolio Modals For News Section -->
+    <!-- Modal News -1 -->
     <div id="portfolioModalN-1" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
 
@@ -747,7 +777,7 @@
     </div>
 
 
-    <!-- Modal N-2 -->
+    <!-- Modal News -2 -->
     <div id="portfolioModalN-2" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
 
@@ -803,7 +833,7 @@
       </div>
     </div>
 
-    <!-- Modal N-3 -->
+    <!-- Modal News -3 -->
     <div id="portfolioModalN-3" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
 
@@ -885,7 +915,7 @@
       </div>
     </div>
 
-<!-- Modal N-4 -->
+    <!-- Modal News -4 -->
     <div id="portfolioModalN-4" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
 
@@ -942,8 +972,10 @@
         </div>
       </div>
     </div>
+    <!-- End Portfolio Modals For News Section -->
 
-<!-- Modal Login -->
+
+    <!-- Modal Login -->
     <div id="modalLogin" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" style="width: 500px; height: 500px">
 
@@ -955,7 +987,9 @@
           <div class="modal-body">
             <h3 class="title-items">Đăng nhập</h3>
             <p></p>
-
+            
+            <!-- POST method to login.php for LOGIN function -->
+            <!-- POST every name attribute of the input tag inside the form to process data-->
             <form method="POST" action=login.php?do=login>
               <div class="container">
                 <label><b>Tên tài khoản</b></label>
@@ -976,6 +1010,8 @@
                 <button style="float: right; color: white" type="button" class="btn btn-warning"" data-dismiss="modal">Cancel</button>
               </div>
             </form>
+            <!-- End POST method -->
+
             </div>
               <p></p>
               <p></p>
@@ -983,8 +1019,9 @@
             </div>             
         </div>
     </div>
+    <!-- End Modal Login -->
 
-<!-- Modal Register -->
+    <!-- Modal Register -->
     <div style="overflow-y:auto;" id="modalRegister" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" style="width: 500px; height: 500px">
 
@@ -997,6 +1034,8 @@
             <h3 class="title-items">Tạo tài khoản</h3>
             <p></p>
 
+            <!-- POST method to login.php for REGISTER function -->
+            <!-- POST every name attribute of the input tag inside the form to process data-->
             <form action='register.php' method="POST">
               <div class="container">
                 <label><b>Tên tài khoản</b></label>
@@ -1023,7 +1062,9 @@
               <div class="container">
                 <button style="float: right; color: white" type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
               </div>
-            </form>             
+            </form>
+            <!-- End POST method -->
+                         
           </div>
           <p></p>
           <p></p>
@@ -1031,6 +1072,8 @@
         </div>
       </div>
     </div>
+    <!-- End Modal Register -->
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
