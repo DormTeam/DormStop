@@ -178,7 +178,7 @@
                    <td style="font-size: 13pt;" align="center"><?php echo $values["item_quantity"]; ?></td>  
                    <td style="font-size: 13pt;" align="center"><?php echo $values["item_price"]; ?>Đ</td>  
                    <td style="font-size: 13pt;" align="center"><?php echo number_format($values["item_quantity"] * $values["item_price"]); ?>Đ</td>  
-                   <td style="font-size: 13pt;" align="center"><a class="btn btn-danger" href="viewcart.php?action=delete&id=<?php echo $values["item_id"]; ?>">Remove</span></a></td>  
+                   <td style="font-size: 13pt;" align="center"><a class="btn btn-danger" href="viewcart.php?action=delete&id=<?php echo $values["item_id"]; ?>">Xóa</span></a></td>  
               </tr>  
               <?php  
                         $total = $total + ($values["item_quantity"] * $values["item_price"]);  

@@ -125,6 +125,10 @@
     <div class="container">
     <?php
       if(isset($_GET["search"])) :?>
+      <!-- Erase all product available except searched product -->  
+      <?php echo "<script>document.getElementById('view_all_products').innerHTML = ''</script>"; ?>
+      
+      <!-- Search start -->
       <?php
         //Get keyword from POST method
         $keyword = $_GET["keyword"];
@@ -148,8 +152,11 @@
                             <a><?php echo $row["name"]; ?></a>
                           </h3>
                           <h5 align="center" style="font-size: 14pt"><?php echo $row["price"]; ?>Đ</h5>
+
+                          <!-- Use hidden variables to POST(require) -->
                           <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />  
-                          <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />           
+                          <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
+                                     
                         </div>
                           <h6 align="center">Chọn số lượng:</h6>                                            
                           <input class="text-center form-control" type="number" name="quantity" value="1" />
@@ -164,10 +171,7 @@
             </div>  
         <?php }  
         } ?>
-        <!-- End Echo data -->
-
-        <!-- Erase all product available except searched product -->  
-        <?php echo "<script>document.getElementById('view_all_products').innerHTML = ''</script>"; ?>
+        <!-- End Echo data -->    
         <?php endif; ?>    
     </div>
     <!-- End Search from database -->
