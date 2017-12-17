@@ -111,6 +111,7 @@
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
         </ol>
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
@@ -122,7 +123,7 @@
             </div>
           </div>
           <!-- Slide Two - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('img/carousel/2.jpg')">
+          <div class="carousel-item" style="background-image: url('img/carousel/happynewyear.png')">
             <div class="carousel-caption d-none d-md-block">
               <h2 class="carousel-font">Giao hàng tiện lợi nhanh chóng</h2>
               <p style="font-size: 120%";>Đơn hàng sẽ xuất hiện trước phòng bạn chỉ trong vòng 20 phút với đội ngũ shipper chuyên nghiệp của chúng tôi</p>
@@ -130,7 +131,15 @@
             </div>
           </div>
           <!-- Slide Three - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('img/carousel/3.jpg')">
+          <div class="carousel-item" style="background-image: url('img/carousel/2.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h2 class="carousel-font">Đa dạng các mặt hàng sản phẩm</h2>
+              <p style="font-size: 120%;">Chúng tôi cung cấp đa dạng các mặt hàng sản phẩm đáp ứng mọi khẩu vị của bạn</p>
+              <a class="btn btn-xl js-scroll-trigger" href="#portfolio">Đặt hàng ngay</a>
+            </div>
+          </div>
+          <!-- Slide Three - Set the background image for this slide in the line below -->
+         <div class="carousel-item" style="background-image: url('img/carousel/3.jpg')">
             <div class="carousel-caption d-none d-md-block">
               <h2 class="carousel-font">Đa dạng các mặt hàng sản phẩm</h2>
               <p style="font-size: 120%;">Chúng tôi cung cấp đa dạng các mặt hàng sản phẩm đáp ứng mọi khẩu vị của bạn</p>
