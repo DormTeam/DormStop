@@ -329,7 +329,7 @@
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
           <div class="carousel-item carousel-item-custom active">
-          	<img src="img/discount/discount4.jpg" width="100%" height="100%">
+          	<img src="img/discount/discount_xmas.png" width="100%" height="100%">
             <div class="carousel-caption d-none d-md-block">
             	<!--
               <h3>First Slide</h3>
