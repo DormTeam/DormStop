@@ -119,7 +119,7 @@
             <div class="carousel-caption d-none d-md-block">
               <h2 class="carousel-font">Đặt hàng chỉ bằng vài cú click chuột</h2>
               <p style="font-size: 120%;"> Với giao diện đơn giản dễ sử dụng, chỉ cần vài cú click chuột để tìm ra món ăn yêu thích của bạn</p> 
-              <a class="btn btn-xl js-scroll-trigger" href="#portfolio">Đặt hàng ngay</a>
+              <a class="btn btn-xl js-scroll-trigger" href="viewproduct.php">Đặt hàng ngay</a>
             </div>
           </div>
           <!-- Slide Two - Set the background image for this slide in the line below -->
@@ -127,7 +127,7 @@
             <div class="carousel-caption d-none d-md-block">
               <h2 class="carousel-font">Giao hàng tiện lợi nhanh chóng</h2>
               <p style="font-size: 120%";>Đơn hàng sẽ xuất hiện trước phòng bạn chỉ trong vòng 20 phút với đội ngũ shipper chuyên nghiệp của chúng tôi</p>
-              <a class="btn btn-xl js-scroll-trigger" href="#portfolio">Đặt hàng ngay</a>
+              <a class="btn btn-xl js-scroll-trigger" href="viewproduct.php">Đặt hàng ngay</a>
             </div>
           </div>
           <!-- Slide Three - Set the background image for this slide in the line below -->
@@ -135,7 +135,7 @@
             <div class="carousel-caption d-none d-md-block">
               <h2 class="carousel-font">Đa dạng các mặt hàng sản phẩm</h2>
               <p style="font-size: 120%;">Chúng tôi cung cấp đa dạng các mặt hàng sản phẩm đáp ứng mọi khẩu vị của bạn</p>
-              <a class="btn btn-xl js-scroll-trigger" href="#portfolio">Đặt hàng ngay</a>
+              <a class="btn btn-xl js-scroll-trigger" href="viewproduct.php">Đặt hàng ngay</a>
             </div>
           </div>
           <!-- Slide Three - Set the background image for this slide in the line below -->
@@ -143,7 +143,7 @@
             <div class="carousel-caption d-none d-md-block">
               <h2 class="carousel-font">Đa dạng các mặt hàng sản phẩm</h2>
               <p style="font-size: 120%;">Chúng tôi cung cấp đa dạng các mặt hàng sản phẩm đáp ứng mọi khẩu vị của bạn</p>
-              <a class="btn btn-xl js-scroll-trigger" href="#portfolio">Đặt hàng ngay</a>
+              <a class="btn btn-xl js-scroll-trigger" href="viewproduct.php">Đặt hàng ngay</a>
             </div>
           </div>
         </div>
