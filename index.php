@@ -114,7 +114,7 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
-          <div class="carousel-item active" style="background-image: url('img/carousel/1.jpg')">
+          <div class="carousel-item active" style="background-image: url('img/carousel/xmas.png')">
             <div class="carousel-caption d-none d-md-block">
               <h2 class="carousel-font">Đặt hàng chỉ bằng vài cú click chuột</h2>
               <p style="font-size: 120%;"> Với giao diện đơn giản dễ sử dụng, chỉ cần vài cú click chuột để tìm ra món ăn yêu thích của bạn</p> 
