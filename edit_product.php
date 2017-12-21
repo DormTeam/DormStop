@@ -4,41 +4,6 @@
  //Connect to database  
  require 'connect.php';
 
- //Remove product in database  
- if(isset($_GET["action"]))  
- {  
-    if($_GET["action"] == "delete")  
-    {
-      $id = $_GET["id"];
-      //$sql = "DELETE FROM prodcuct WHERE code='$code'";
-      mysqli_query($connect, "DELETE FROM product WHERE id = '$id'");
-      echo '<script>window.location="admin.php"</script>';
-    } 
- }
-
- //Update product to database
- if(isset($_POST["update"]))
- {
-  if(isset($_GET["action"]))  
-  {  
-    if($_GET["action"] == "update")  
-    {
-      $id = $_GET["id"];
-      $product_name = $_POST["product_name"];
-      $price = $_POST["price"];
-      $quantity = $_POST["quantity"];
-      $image_url = $_POST["image_url"];
-
-      $sql = "UPDATE product SET name='$product_name', price='$price', quantity='$quantity', imgurl='$image_url' WHERE id='$id'";
-      mysqli_query($connect,$sql);
-
-      echo '<script>alert("Chỉnh sửa thành công")</script>';  
-      echo '<script>window.location="admin.php"</script>';
-    }
-  }
-} 
-
- //Add product to database
  if(isset($_POST["add_product"]))
  {
     $product_name = $_POST["product_name"];
@@ -159,7 +124,13 @@
     <br />
       <!-- Require ADMIN LOGGED IN -->
         <?php if(isset($_COOKIE['username'])): ?>
-          <h3 align="center">Các sản phẩm hiện có trong kho</h3>
+          <?php
+          if(isset($_GET["action"]))  
+          {  
+            if($_GET["action"] == "edit")
+            $id = $_GET["id"];  
+            {?>
+          <h3 align="center">Cập nhật sản phẩm hiện có trong kho</h3>
           <p></p>  
           <div class="table-responsive">  
             <table class="table table-hover">  
@@ -174,27 +145,38 @@
               <!-- Get order information form productview page -->  
               <?php                   
                 //Query to get information
-                $query = "SELECT * FROM product ORDER BY id ASC";  
+                $query="SELECT * FROM product WHERE id='$id'"; 
                 $result = mysqli_query($connect, $query);
 
                 if(mysqli_num_rows($result) > 0)  {
                 //fetch every info in the database  
                 while($row = mysqli_fetch_array($result))  
-              {?>  
-              <tr>   
-               <td style="font-size: 13pt;" align="center"><?php echo $row["name"]; ?></td>  
-               <td style="font-size: 13pt;" align="center"><?php echo $row["price"]; ?></td>  
-               <td style="font-size: 13pt;" align="center"><?php echo $row["quantity"]; ?></td>
-               <td style="font-size: 13pt;" align="center"><?php echo $row["imgurl"]; ?></td>   
-               <td style="font-size: 13pt;" align="center">
-                <a class="btn btn-danger" href="admin.php?action=delete&id=<?php echo $row["id"]; ?>">Xóa</span></a>
-                <a class="btn btn-info" href="edit_product.php?action=edit&id=<?php echo $row["id"]; ?>">Sửa</span></a>
-              </td>  
-              </tr>
+              {?>
+              <form method="post" action="admin.php?action=update&id=<?php echo $row["id"]; ?>">  
+                <tr>   
+                  <td>
+                    <input type="text" name="product_name" style="font-size: 13pt;" align="center" value="<?php echo $row["name"]; ?>">
+                  </td>
+                  <td>
+                    <input type="text" name="price" style="font-size: 13pt;" align="center" value="<?php echo $row["price"]; ?>">
+                  </td>
+                  <td>
+                    <input type="text" name="quantity" style="font-size: 13pt;" align="center" value="<?php echo $row["quantity"]; ?>">
+                  </td>
+                  <td>
+                    <input type="text" name="image_url" style="font-size: 13pt;" align="center" value="<?php echo $row["imgurl"]; ?>">
+                  </td>   
+                 <td style="font-size: 13pt;" align="center">
+                  <input id="atcart" type="submit" name="update" class="btn btn-success" value="Cập nhật" />
+                </td>  
+                </tr>
+              </form>
               <?php }  
               } ?>  
             </table>
-          </div> 
+          </div>
+          <?php }  
+          } ?> 
         
         <!-- Show LOGIN FORM IF DIDNT LOGIN YET -->
         <?php else: ?>
