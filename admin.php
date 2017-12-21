@@ -56,7 +56,10 @@
         <div class="collapse navbar-collapse menu-font" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <!-- Check cookies for showing login menu -->
-                <?php if(isset($_COOKIE['username'])): ?> 
+                <?php if(isset($_COOKIE['username'])): ?>
+                  <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#">Thêm sản phẩm</a>
+                  </li>  
                   <li class="nav-item dropdown">
                     <a class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown" href="#">
 
@@ -64,7 +67,7 @@
                         echo $_COOKIE['username'];  
                       ?>
 
-                    </a>
+                    </a> 
                     <ul class="dropdown-menu dropdown-content">
 
                       <!-- Check cookies for showing corresponding logout and login -->
@@ -119,6 +122,7 @@
                <td style="font-size: 13pt;" align="center"><?php echo $row["imgurl"]; ?></td>   
                <td style="font-size: 13pt;" align="center">
                 <a class="btn btn-danger" href="viewcart.php?action=delete&id=<?php echo $row["id"]; ?>">Xóa</span></a>
+                <a class="btn btn-info" href="viewcart.php?action=delete&id=<?php echo $row["id"]; ?>">Sửa</span></a>
               </td>  
               </tr>
               <?php }  
