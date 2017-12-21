@@ -7,13 +7,45 @@
  //Remove product in database  
  if(isset($_GET["action"]))  
  {  
-      if($_GET["action"] == "delete")  
-      {
-        $id = $_GET["id"];
-        //$sql = "DELETE FROM prodcuct WHERE code='$code'";
-        mysqli_query($connect, "DELETE FROM product WHERE id = '$id'");
-        
-      } 
+    if($_GET["action"] == "delete")  
+    {
+      $id = $_GET["id"];
+      //$sql = "DELETE FROM prodcuct WHERE code='$code'";
+      mysqli_query($connect, "DELETE FROM product WHERE id = '$id'");
+      echo '<script>window.location="admin.php"</script>';
+    } 
+ }
+ if(isset($_POST["add_product"]))
+ {
+    $product_name = $_POST["product_name"];
+    $price = $_POST["price"];
+    $quantity = $_POST["quantity"];
+    $image_url = $_POST["image_url"];
+
+    $sql="SELECT * FROM product WHERE name='$product_name'";
+    $check=mysqli_query($connect, $sql);
+    if(mysqli_num_rows($check)  > 0){
+        echo '<script>alert("Sản phẩm đã tồn tại")</script>';  
+          echo '<script>window.location="admin.php"</script>';
+      }else{
+        //Store data to database
+        $sql = "INSERT INTO product(
+          name,
+          price,
+          quantity,
+          imgurl
+          ) VALUES (
+          '$product_name',
+          '$price',
+          '$quantity',
+          '$image_url'
+          )";
+        //Execute to insert data
+        mysqli_query($connect,$sql);
+
+          echo '<script>alert("Nhập kho thành công")</script>';  
+          echo '<script>window.location="admin.php"</script>';
+      }  
  }
 ?>  
 <!DOCTYPE html>
@@ -69,7 +101,7 @@
             <!-- Check cookies for showing login menu -->
                 <?php if(isset($_COOKIE['username'])): ?>
                   <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#">Thêm sản phẩm</a>
+                    <a class="nav-link js-scroll-trigger" data-toggle="modal" href="#modalAddProduct">Thêm sản phẩm</a>
                   </li>  
                   <li class="nav-item dropdown">
                     <a class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown" href="#">
@@ -103,15 +135,15 @@
     <br />
       <!-- Require ADMIN LOGGED IN -->
         <?php if(isset($_COOKIE['username'])): ?>
-          <h3 align="center">Các sản phẩm hiện có trong kho</h3>  
+          <h3 align="center">Các sản phẩm hiện có trong kho</h3>
+          <p></p>  
           <div class="table-responsive">  
             <table class="table table-hover">  
               <tr>  
-                   <th class="text-center" width="15%" style="font-size: 14pt;">Mã sản phẩm</th>  
                    <th class="text-center" width="25%" style="font-size: 14pt;">Tên sản phẩm</th>  
-                   <th class="text-center" width="10%" style="font-size: 14pt;">Giá</th>  
+                   <th class="text-center" width="15%" style="font-size: 14pt;">Giá</th>  
                    <th class="text-center" width="10%" style="font-size: 14pt;">Số lượng</th>
-                   <th class="text-center" width="20%" style="font-size: 14pt;">Hình ảnh</th>  
+                   <th class="text-center" width="30%" style="font-size: 14pt;">Hình ảnh</th>  
                    <th class="text-center" width="20%" style="font-size: 14pt;">Chỉnh sửa</th>  
               </tr>
 
@@ -125,8 +157,7 @@
                 //fetch every info in the database  
                 while($row = mysqli_fetch_array($result))  
               {?>  
-              <tr>  
-               <td style="font-size: 13pt;" align="center"><?php echo $row["code"]; ?></td>  
+              <tr>   
                <td style="font-size: 13pt;" align="center"><?php echo $row["name"]; ?></td>  
                <td style="font-size: 13pt;" align="center"><?php echo $row["price"]; ?></td>  
                <td style="font-size: 13pt;" align="center"><?php echo $row["quantity"]; ?></td>
@@ -162,7 +193,52 @@
           </div>
         <?php endif; ?>      
     </div>
-    
+    <!-- Modal Add product -->
+    <div style="overflow-y:auto;" id="modalAddProduct" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" style="width: 500px; height: 500px">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <p></p>
+          </div>
+          <div class="modal-body">
+            <h3 class="title-items">Thêm sản phẩm</h3>
+            <p></p>
+
+            <!-- POST method to login.php for ADD PRODUCT function -->
+            <!-- POST every name attribute of the input tag inside the form to process data-->
+            <form action='admin.php' method="POST">
+              <div class="container">
+                <label><b>Tên sản phẩm</b></label>
+                <input type="text" placeholder="Nhập tên sản phẩm" name="product_name" required>
+
+                <label><b>Giá</b></label>
+                <input type="text" placeholder="Nhập giá" name="price" required>
+
+                <label><b>Số lượng</b></label>
+                <input type="text" placeholder="Nhập số lượng" name="quantity" required>
+                
+                <label><b>Hình ảnh</b></label>
+                <input type="text" placeholder="Nhập url hình ảnh" name="image_url" required>
+
+                <button type="submit" name="add_product">Thêm sản phẩm</button>
+              </div>
+
+              <div class="container">
+                <button style="float: right; color: white" type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
+              </div>
+            </form>
+            <!-- End POST method -->
+                         
+          </div>
+          <p></p>
+          <p></p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <!-- End Modal Add product -->
 
 <!-- End Admin information -->
 
