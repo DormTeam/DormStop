@@ -4,6 +4,17 @@
  //Connect to database  
  require 'connect.php';
 
+ //Remove product in database  
+ if(isset($_GET["action"]))  
+ {  
+      if($_GET["action"] == "delete")  
+      {
+        $id = $_GET["id"];
+        //$sql = "DELETE FROM prodcuct WHERE code='$code'";
+        mysqli_query($connect, "DELETE FROM product WHERE id = '$id'");
+        
+      } 
+ }
 ?>  
 <!DOCTYPE html>
 <html lang="en">
@@ -87,7 +98,7 @@
     <!-- End Navigation -->
 
     <!-- Admin page information -->
-    <div class="container" style="margin-top: 150px">
+    <div class="container" style="margin-top: 100px">
     <div style="clear:both"></div>  
     <br />
       <!-- Require ADMIN LOGGED IN -->
@@ -121,8 +132,8 @@
                <td style="font-size: 13pt;" align="center"><?php echo $row["quantity"]; ?></td>
                <td style="font-size: 13pt;" align="center"><?php echo $row["imgurl"]; ?></td>   
                <td style="font-size: 13pt;" align="center">
-                <a class="btn btn-danger" href="viewcart.php?action=delete&id=<?php echo $row["id"]; ?>">Xóa</span></a>
-                <a class="btn btn-info" href="viewcart.php?action=delete&id=<?php echo $row["id"]; ?>">Sửa</span></a>
+                <a class="btn btn-danger" href="admin.php?action=delete&id=<?php echo $row["id"]; ?>">Xóa</span></a>
+                <a class="btn btn-info" href="admin.php?action=edit&id=<?php echo $row["id"]; ?>">Sửa</span></a>
               </td>  
               </tr>
               <?php }  
