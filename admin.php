@@ -188,7 +188,7 @@
                <td style="font-size: 13pt;" align="center"><?php echo $row["imgurl"]; ?></td>   
                <td style="font-size: 13pt;" align="center">
                 <a class="btn btn-danger" href="admin.php?action=delete&id=<?php echo $row["id"]; ?>">Xóa</span></a>
-                <a class="btn btn-info" href="edit_product.php?action=edit&id=<?php echo $row["id"]; ?>">Sửa</span></a>
+                <a class="btn btn-success" href="edit_product.php?action=edit&id=<?php echo $row["id"]; ?>">Sửa</span></a>
               </td>  
               </tr>
               <?php }  

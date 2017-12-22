@@ -155,19 +155,19 @@
               <form method="post" action="admin.php?action=update&id=<?php echo $row["id"]; ?>">  
                 <tr>   
                   <td>
-                    <input type="text" name="product_name" style="font-size: 13pt;" align="center" value="<?php echo $row["name"]; ?>">
+                    <input class="form-control" type="text" name="product_name" style="font-size: 13pt;" align="center" value="<?php echo $row["name"]; ?>">
                   </td>
                   <td>
-                    <input type="text" name="price" style="font-size: 13pt;" align="center" value="<?php echo $row["price"]; ?>">
+                    <input class="form-control" type="text" name="price" style="font-size: 13pt;" align="center" value="<?php echo $row["price"]; ?>">
                   </td>
                   <td>
-                    <input type="text" name="quantity" style="font-size: 13pt;" align="center" value="<?php echo $row["quantity"]; ?>">
+                    <input class="form-control" type="text" name="quantity" style="font-size: 13pt;" align="center" value="<?php echo $row["quantity"]; ?>">
                   </td>
                   <td>
-                    <input type="text" name="image_url" style="font-size: 13pt;" align="center" value="<?php echo $row["imgurl"]; ?>">
+                    <input class="form-control" type="text" name="image_url" style="font-size: 13pt;" align="center" value="<?php echo $row["imgurl"]; ?>">
                   </td>   
-                 <td style="font-size: 13pt;" align="center">
-                  <input id="atcart" type="submit" name="update" class="btn btn-success" value="Cập nhật" />
+                 <td style="font-size: 25pt" align="center">
+                  <input id="atcart" type="submit" name="update" class="btn btn-info" value="Cập nhật" />
                 </td>  
                 </tr>
               </form>
