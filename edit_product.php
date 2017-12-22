@@ -8,7 +8,6 @@
  {
     $product_name = $_POST["product_name"];
     $price = $_POST["price"];
-    $quantity = $_POST["quantity"];
     $image_url = $_POST["image_url"];
 
     $sql="SELECT * FROM product WHERE name='$product_name'";
@@ -21,12 +20,10 @@
         $sql = "INSERT INTO product(
           name,
           price,
-          quantity,
           imgurl
           ) VALUES (
           '$product_name',
           '$price',
-          '$quantity',
           '$image_url'
           )";
         //Execute to insert data
@@ -137,7 +134,6 @@
               <tr>  
                    <th class="text-center" width="25%" style="font-size: 14pt;">Tên sản phẩm</th>  
                    <th class="text-center" width="15%" style="font-size: 14pt;">Giá</th>  
-                   <th class="text-center" width="10%" style="font-size: 14pt;">Số lượng</th>
                    <th class="text-center" width="30%" style="font-size: 14pt;">Hình ảnh</th>  
                    <th class="text-center" width="20%" style="font-size: 14pt;">Chỉnh sửa</th>  
               </tr>
@@ -159,9 +155,6 @@
                   </td>
                   <td>
                     <input class="form-control" type="text" name="price" style="font-size: 13pt;" align="center" value="<?php echo $row["price"]; ?>">
-                  </td>
-                  <td>
-                    <input class="form-control" type="text" name="quantity" style="font-size: 13pt;" align="center" value="<?php echo $row["quantity"]; ?>">
                   </td>
                   <td>
                     <input class="form-control" type="text" name="image_url" style="font-size: 13pt;" align="center" value="<?php echo $row["imgurl"]; ?>">
@@ -221,12 +214,9 @@
 
                 <label><b>Giá</b></label>
                 <input type="text" placeholder="Nhập giá" name="price" required>
-
-                <label><b>Số lượng</b></label>
-                <input type="text" placeholder="Nhập số lượng" name="quantity" required>
                 
                 <label><b>Hình ảnh</b></label>
-                <input type="text" placeholder="Nhập url hình ảnh" name="image_url" required>
+                <input type="text" placeholder="Nhập URL hình ảnh" name="image_url" required>
 
                 <button type="submit" name="add_product">Thêm sản phẩm</button>
               </div>

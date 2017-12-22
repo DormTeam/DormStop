@@ -26,10 +26,9 @@
       $id = $_GET["id"];
       $product_name = $_POST["product_name"];
       $price = $_POST["price"];
-      $quantity = $_POST["quantity"];
       $image_url = $_POST["image_url"];
 
-      $sql = "UPDATE product SET name='$product_name', price='$price', quantity='$quantity', imgurl='$image_url' WHERE id='$id'";
+      $sql = "UPDATE product SET name='$product_name', price='$price', imgurl='$image_url' WHERE id='$id'";
       mysqli_query($connect,$sql);
 
       echo '<script>alert("Chỉnh sửa thành công")</script>';  
@@ -43,7 +42,6 @@
  {
     $product_name = $_POST["product_name"];
     $price = $_POST["price"];
-    $quantity = $_POST["quantity"];
     $image_url = $_POST["image_url"];
 
     $sql="SELECT * FROM product WHERE name='$product_name'";
@@ -56,12 +54,10 @@
         $sql = "INSERT INTO product(
           name,
           price,
-          quantity,
           imgurl
           ) VALUES (
           '$product_name',
           '$price',
-          '$quantity',
           '$image_url'
           )";
         //Execute to insert data
@@ -164,9 +160,8 @@
           <div class="table-responsive">  
             <table class="table table-hover">  
               <tr>  
-                   <th class="text-center" width="25%" style="font-size: 14pt;">Tên sản phẩm</th>  
-                   <th class="text-center" width="15%" style="font-size: 14pt;">Giá</th>  
-                   <th class="text-center" width="10%" style="font-size: 14pt;">Số lượng</th>
+                   <th class="text-center" width="30%" style="font-size: 14pt;">Tên sản phẩm</th>  
+                   <th class="text-center" width="20%" style="font-size: 14pt;">Giá</th>  
                    <th class="text-center" width="30%" style="font-size: 14pt;">Hình ảnh</th>  
                    <th class="text-center" width="20%" style="font-size: 14pt;">Chỉnh sửa</th>  
               </tr>
@@ -184,7 +179,6 @@
               <tr>   
                <td style="font-size: 13pt;" align="center"><?php echo $row["name"]; ?></td>  
                <td style="font-size: 13pt;" align="center"><?php echo $row["price"]; ?></td>  
-               <td style="font-size: 13pt;" align="center"><?php echo $row["quantity"]; ?></td>
                <td style="font-size: 13pt;" align="center"><?php echo $row["imgurl"]; ?></td>   
                <td style="font-size: 13pt;" align="center">
                 <a class="btn btn-danger" href="admin.php?action=delete&id=<?php echo $row["id"]; ?>">Xóa</span></a>
@@ -239,12 +233,9 @@
 
                 <label><b>Giá</b></label>
                 <input type="text" placeholder="Nhập giá" name="price" required>
-
-                <label><b>Số lượng</b></label>
-                <input type="text" placeholder="Nhập số lượng" name="quantity" required>
                 
                 <label><b>Hình ảnh</b></label>
-                <input type="text" placeholder="Nhập url hình ảnh" name="image_url" required>
+                <input type="text" placeholder="Nhập URL hình ảnh" name="image_url" required>
 
                 <button type="submit" name="add_product">Thêm sản phẩm</button>
               </div>
