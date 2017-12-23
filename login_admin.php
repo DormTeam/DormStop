@@ -9,7 +9,7 @@
     if (isset($_POST['login'])) 
     {
         //Get POST information inside the form
-        $username = $_POST['username'];
+        $username = $_POST['username_admin'];
         $password = $_POST['password'];
 
         //Query for checking the correct account
@@ -18,7 +18,7 @@
 
         if(mysqli_num_rows($check)  > 0) {
             //Set cookie
-            setcookie("username", $username);
+            setcookie("username_admin", $username);
             //Return to index page
             echo '<script>window.location="admin.php"</script>';
        }else {
