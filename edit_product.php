@@ -85,7 +85,7 @@
         <div class="collapse navbar-collapse menu-font" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <!-- Check cookies for showing login menu -->
-                <?php if(isset($_COOKIE['username'])): ?>
+                <?php if(isset($_COOKIE['username_admin'])): ?>
                   <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" data-toggle="modal" href="#modalAddProduct">Thêm sản phẩm</a>
                   </li>  
@@ -93,15 +93,15 @@
                     <a class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown" href="#">
 
                       <?php
-                        echo $_COOKIE['username'];  
+                        echo $_COOKIE['username_admin'];  
                       ?>
 
                     </a> 
                     <ul class="dropdown-menu dropdown-content">
 
                       <!-- Check cookies for showing corresponding logout and login -->
-                      <?php if(isset($_COOKIE['username'])): ?> 
-                          <li><a href="#" id="log_out">Đăng xuất</a></li>
+                      <?php if(isset($_COOKIE['username_admin'])): ?> 
+                          <li><a href="#" id="log_out_admin">Đăng xuất</a></li>
                       <?php else: ?>
                           <li><a class="portfolio-link" data-toggle="modal" href="#modalLogin">Đăng nhập</a></li>
                       <?php endif; ?>
@@ -120,7 +120,7 @@
     <div style="clear:both"></div>  
     <br />
       <!-- Require ADMIN LOGGED IN -->
-        <?php if(isset($_COOKIE['username'])): ?>
+        <?php if(isset($_COOKIE['username_admin'])): ?>
           <?php
           if(isset($_GET["action"]))  
           {  
@@ -178,7 +178,7 @@
               <h2 class="form-signin-heading text-center">Vui lòng đăng nhập</h2>
               <div class="col-md-6" style="margin: 0px auto;">
                 <label for="inputEmail" class="sr-only">Tên tài khoản</label>
-                <input name="username" type="text" id="inputEmail" class="form-control" placeholder="Tên tài khoản" required autofocus>
+                <input name="username_admin" type="text" id="inputEmail" class="form-control" placeholder="Tên tài khoản" required autofocus>
                 <label for="inputPassword" class="sr-only">Mật khẩu</label>
                 <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Mật khẩu" required>
                 <div class="checkbox">

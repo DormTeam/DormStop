@@ -3,8 +3,8 @@ var delete_cookie = function(name) {
 };
 
 function myFunction() {
-    delete_cookie('username');
+    delete_cookie('username_admin');
     window.location='admin.php';
 }
 
-document.getElementById("log_out").onclick = function(){myFunction()};
+document.getElementById("log_out_admin").onclick = function(){myFunction()};

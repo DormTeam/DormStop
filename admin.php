@@ -135,7 +135,7 @@
 
                       <!-- Check cookies for showing corresponding logout and login -->
                       <?php if(isset($_COOKIE['username_admin'])): ?> 
-                          <li><a href="#" id="log_out">Đăng xuất</a></li>
+                          <li><a href="#" id="log_out_admin">Đăng xuất</a></li>
                       <?php else: ?>
                           <li><a class="portfolio-link" data-toggle="modal" href="#modalLogin">Đăng nhập</a></li>
                       <?php endif; ?>
