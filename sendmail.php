@@ -36,13 +36,19 @@ if (isset($_POST["order"]))
 					"Địa chỉ: " . " " . $result->address . "<br>" . "<br>" .
 					"Thông tin đặt hàng: " . "<br>";
 
+	$message2 = '<html><body>';
+	$message2 .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+	$message2 .= "<tr style='background: #eee;'><td>Tên sản phẩm</td><td>Số lượng</td>";				
 	//Get the orders information & add to message
 	for($x = 0;$x < $count;$x++)
-	{ 
-		$message1  =  $_SESSION["shopping_cart"][$x]['item_name'] . " x" . $_SESSION["shopping_cart"][$x]['item_quantity'] . "<br>";
+	{
+		$message1 = "<tr><td><strong>" .$_SESSION["shopping_cart"][$x]['item_name'] ."</strong></td><td>" .$_SESSION["shopping_cart"][$x]['item_quantity'] ."</td></tr>";
+
 		$message2 .= $message1;
 	}
-	$message .= $message_info . $message2;
+
+	$message .= $message_info . $message2 . "</table>" . "<br>";
+	$message .= "Tổng giá trị đơn hàng: " . $total . "VND" . "</body></html>";
 
 	//Create header
 	$headers  = 'From: dormstop.notification@gmail.com' . "\r\n" .
